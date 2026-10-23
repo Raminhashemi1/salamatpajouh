@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>سلامت‌پژوه | پیش‌نمایش پرداخت و تسهیم درآمد</title>
+<style>
+:root{--ink:#173f48;--green:#116268;--line:#d8e8e5;--bg:#f3f8f7}*{box-sizing:border-box}
+body{font:14px Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);margin:0;padding:20px;line-height:1.9}
+main{max-width:780px;margin:auto;background:white;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 12px 30px #193c4410}
+h1{font-size:23px;margin:0 0 10px}h2{font-size:18px;margin:0 0 10px}h3{font-size:15px}
+section{border:1px solid var(--line);border-radius:14px;padding:17px;margin:16px 0}
+button{border:0;border-radius:10px;padding:12px 16px;background:#dbe5e2;color:#657876;font:inherit}
+.warning{background:#fff4db;border-radius:10px;padding:12px;color:#7d5411}
+.small{font-size:12px;color:#627981}.row{display:flex;gap:14px;flex-wrap:wrap}
+.row>label{flex:1;min-width:160px}label{display:block;margin-top:9px}
+input,select{display:block;margin:5px 0;width:100%;padding:10px;border-radius:9px;border:1px solid #c9ded9;background:white;color:var(--ink);font:inherit}
+input:focus-visible,select:focus-visible{outline:3px solid #b5d8d3}
+.partners{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.output{background:#eff8f5;border:1px solid #c8e7d9;border-radius:12px;padding:14px;margin:12px 0}
+.output.error{background:#fff2ee;border-color:#eab8ab}
+.amount{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid #d5e6df;padding:6px 2px}
+.amount:last-child{border:0} [hidden]{display:none!important}
+</style>
+</head><body><main>
+<h1>سلامت‌پژوه — پیش‌نمایش پرداخت و تسهیم درآمد</h1>
+<p class="warning"><strong>نسخه غیرعملیاتی:</strong> درگاه داخلی، خارجی و انتقال وجه به شرکا همگی غیرفعال‌اند. این صفحه فقط شیوه محاسبه و نمایش را آزمایش می‌کند.</p>
+<section><h2>پرداخت داخلی</h2><p>واحد پول: <strong>ریال ایران (IRR)</strong></p><button disabled>پرداخت ریالی — غیرفعال</button></section>
+<section><h2>پرداخت بین‌المللی</h2><p>واحدهای پیشنهادی: USD / EUR؛ هنوز تعرفه مستقلی مصوب نشده است.</p><button disabled>پرداخت بین‌المللی — غیرفعال</button></section>
+<section aria-label="پیش‌نمایش اختیاری تسهیم درآمد">
+<h2>گزینه اضافی: تسهیم درآمد بین شرکا</h2>
+<p class="small">قابل استفاده در پنل مالی مدیر در نسخه نهایی، فقط پس از تأیید درگاه. نسبت‌های هر سفارش پیش از پرداخت ثبت و قفل می‌شوند. هیچ اطلاعات بانکی وارد نکنید.</p>
+<label>نوع تقسیم
+<select id="mode"><option value="default">نسبت پیش‌فرض دو شریک</option><option value="case">استثنای یک سفارش مشخص</option></select>
+</label>
+<label id="third-wrap" hidden><input type="checkbox" id="third" style="width:auto;display:inline;margin-left:7px">افزودن نفر سوم فقط برای همین سفارش</label>
+<div class="partners">
+<label>سهم شریک اول (درصد)<input id="p1" type="number" min="1" max="99" step="1" value="60"></label>
+<label>سهم شریک دوم (درصد)<input id="p2" type="number" min="1" max="99" step="1" value="40"></label>
+<label id="p3-wrap" hidden>سهم نفر سوم (درصد)<input id="p3" type="number" min="1" max="99" step="1" value="20"></label>
+</div>
+<p class="small">محاسبه طبق تصمیم مالک محصول: <strong>تقسیم از مبلغ خالص پس از کسر هزینه‌های تأییدشده</strong>. این اعداد ساختگی‌اند؛ در محصول واقعی هزینه‌ها تنها با مدارک و تصویب مجاز کسر می‌شوند.</p>
+<div class="row"><label>کارمزد درگاه ـ ریال<input type="number" id="demo-fee" value="200000" min="0" step="1"></label><label>هزینه مستقیم مصوب ـ ریال<input type="number" id="demo-expense" value="800000" min="0" step="1"></label><label>استرداد مشتری ـ ریال<input type="number" id="demo-refund" value="0" min="0" step="1"></label></div>
+<p class="small">مبلغ ناخالص نمونه: <strong>۱۰٬۰۰۰٬۰۰۰ ریال</strong>. کسورات قانونی و سایر هزینه‌ها نیز در نسخهٔ نهایی فقط در صورت مستند بودن قابل احتساب‌اند.</p>
+<div id="result" class="output" aria-live="polite"></div>
+<button disabled>فعال‌سازی تسهیم — نیازمند تأیید پذیرنده</button>
+</section>
+<p class="small">عضویت اولیه یک‌ساله؛ تخفیف اختیاری ۱۰٪ برای اعضای جدید واجد شرایط، تمدید با ۳۰٪ تخفیف پس از انقضا. تمامی اعداد این صفحه صرفاً مثال هستند.</p>
+</main>
+<script>
+(function(){
+"use strict";
+const mode=document.getElementById("mode"),third=document.getElementById("third");
+const p1=document.getElementById("p1"),p2=document.getElementById("p2"),p3=document.getElementById("p3");
+const result=document.getElementById("result");
+const format=n=>n.toLocaleString("fa-IR")+" ریال";
+const gross=10000000n;
+const fee=document.getElementById('demo-fee'),expense=document.getElementById('demo-expense'),refund=document.getElementById('demo-refund');
+function render(){
+ const withThird=mode.value==="case"&&third.checked;
+ document.getElementById("third-wrap").hidden=mode.value!=="case";
+ document.getElementById("p3-wrap").hidden=!withThird;
+ const raw=withThird?[p1.value,p2.value,p3.value]:[p1.value,p2.value];
+ const percentages=raw.map(Number);
+ const valid=raw.every(s=>s.trim()!==""&&/^\d+$/.test(s))&&percentages.every(n=>Number.isInteger(n)&&n>0&&n<100)&&percentages.reduce((a,b)=>a+b,0)===100;
+ if(!valid){
+  result.className="output error";
+  result.textContent="برای محاسبه، سهم هر نفر باید مثبت و مجموع درصدها دقیقاً ۱۰۰٪ باشد.";
+  return;
+ }
+ const vals=[fee.value,expense.value,refund.value];
+ if(!vals.every(v=>/^\d+$/.test(v.trim())&&Number.isSafeInteger(Number(v)))){
+  result.className="output error";result.textContent="هزینه‌ها باید مبلغ ریالی صحیح، غیرمنفی و معتبر باشند.";return;
+ }
+ const costs=vals.reduce((sum,val)=>sum+BigInt(val),0n);
+ if(costs>gross){
+  result.className="output error";result.textContent="مجموع هزینه‌ها نمی‌تواند از درآمد ناخالص بیشتر باشد.";return;
+ }
+ const total=gross-costs;
+ const parts=percentages.map((percent,index)=>{
+  const numerator=total*BigInt(percent);return {index,base:numerator/100n,rem:numerator%100n};
+ });
+ let remainder=total-parts.reduce((sum,item)=>sum+item.base,0n);
+ for(const part of [...parts].sort((a,b)=>Number(b.rem-a.rem)||a.index-b.index)){
+  if(remainder<=0n)break;part.base++;remainder--;
+ }
+ const labels=["شریک اول","شریک دوم","نفر سوم"];
+ const lines=parts.map(part=>'<div class="amount"><span>'+labels[part.index]+' ('+percentages[part.index].toLocaleString("fa-IR")+'٪)</span><strong>'+format(Number(part.base))+'</strong></div>').join("");
+ result.className="output";
+ result.innerHTML='<div class="amount"><span>درآمد ناخالص</span><strong>'+format(Number(gross))+'</strong></div><div class="amount"><span>هزینه‌های نمونه</span><strong>− '+format(Number(costs))+'</strong></div><div class="amount"><span>درآمد خالص قابل تقسیم</span><strong>'+format(Number(total))+'</strong></div><strong>'+ (mode.value==="case"?"نمونه تقسیم فقط برای سفارش جاری":"نمونه نسبت پیش‌فرض") +'</strong>'+lines;
+}
+mode.addEventListener("change",()=>{third.checked=false;p1.value=mode.value==="default"?"60":"70";p2.value=mode.value==="default"?"40":"30";render();});
+third.addEventListener("change",()=>{p1.value=third.checked?"50":"70";p2.value="30";render();});
+for(const element of [p1,p2,p3,fee,expense,refund])element.addEventListener("input",render);
+render();
+})();
+</script>
+</body></html>

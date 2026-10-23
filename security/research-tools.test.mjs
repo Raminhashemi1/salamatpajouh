@@ -12,7 +12,7 @@ test("research tools page is Persian, responsive and has all three modules", () 
 });
 
 test("inline JavaScript parses", () => {
-  const scripts = [...html.matchAll(/<script>([\\s\\S]*?)<\\/script>/g)];
+  const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
   assert.ok(scripts.length > 0, "expected an inline script");
   for (const script of scripts) assert.doesNotThrow(() => new Function(script[1]));
 });

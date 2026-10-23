@@ -36,7 +36,9 @@ input:focus-visible,select:focus-visible{outline:3px solid #b5d8d3}
 <label>سهم شریک دوم (درصد)<input id="p2" type="number" min="1" max="99" step="1" value="40"></label>
 <label id="p3-wrap" hidden>سهم نفر سوم (درصد)<input id="p3" type="number" min="1" max="99" step="1" value="20"></label>
 </div>
-<p class="small">مبلغ نمونه قابل تقسیم: <strong>۱۰٬۰۰۰٬۰۰۰ ریال</strong>. مبنای تقسیم نهایی (ناخالص یا خالص پس از هزینه‌ها) باید در قرارداد تعیین شود.</p>
+<p class="small">محاسبه طبق تصمیم مالک محصول: <strong>تقسیم از مبلغ خالص پس از کسر هزینه‌های تأییدشده</strong>. این اعداد ساختگی‌اند؛ در محصول واقعی هزینه‌ها تنها با مدارک و تصویب مجاز کسر می‌شوند.</p>
+<div class="row"><label>کارمزد درگاه ـ ریال<input type="number" id="demo-fee" value="200000" min="0" step="1"></label><label>هزینه مستقیم مصوب ـ ریال<input type="number" id="demo-expense" value="800000" min="0" step="1"></label><label>استرداد مشتری ـ ریال<input type="number" id="demo-refund" value="0" min="0" step="1"></label></div>
+<p class="small">مبلغ ناخالص نمونه: <strong>۱۰٬۰۰۰٬۰۰۰ ریال</strong>. کسورات قانونی و سایر هزینه‌ها نیز در نسخهٔ نهایی فقط در صورت مستند بودن قابل احتساب‌اند.</p>
 <div id="result" class="output" aria-live="polite"></div>
 <button disabled>فعال‌سازی تسهیم — نیازمند تأیید پذیرنده</button>
 </section>
@@ -49,7 +51,8 @@ const mode=document.getElementById("mode"),third=document.getElementById("third"
 const p1=document.getElementById("p1"),p2=document.getElementById("p2"),p3=document.getElementById("p3");
 const result=document.getElementById("result");
 const format=n=>n.toLocaleString("fa-IR")+" ریال";
-const total=10000000n;
+const gross=10000000n;
+const fee=document.getElementById('demo-fee'),expense=document.getElementById('demo-expense'),refund=document.getElementById('demo-refund');
 function render(){
  const withThird=mode.value==="case"&&third.checked;
  document.getElementById("third-wrap").hidden=mode.value!=="case";
@@ -62,6 +65,15 @@ function render(){
   result.textContent="برای محاسبه، سهم هر نفر باید مثبت و مجموع درصدها دقیقاً ۱۰۰٪ باشد.";
   return;
  }
+ const vals=[fee.value,expense.value,refund.value];
+ if(!vals.every(v=>/^\\d+$/.test(v.trim())&&Number.isSafeInteger(Number(v)))){
+  result.className="output error";result.textContent="هزینه‌ها باید مبلغ ریالی صحیح، غیرمنفی و معتبر باشند.";return;
+ }
+ const costs=vals.reduce((sum,val)=>sum+BigInt(val),0n);
+ if(costs>gross){
+  result.className="output error";result.textContent="مجموع هزینه‌ها نمی‌تواند از درآمد ناخالص بیشتر باشد.";return;
+ }
+ const total=gross-costs;
  const parts=percentages.map((percent,index)=>{
   const numerator=total*BigInt(percent);return {index,base:numerator/100n,rem:numerator%100n};
  });
@@ -72,11 +84,11 @@ function render(){
  const labels=["شریک اول","شریک دوم","نفر سوم"];
  const lines=parts.map(part=>'<div class="amount"><span>'+labels[part.index]+' ('+percentages[part.index].toLocaleString("fa-IR")+'٪)</span><strong>'+format(Number(part.base))+'</strong></div>').join("");
  result.className="output";
- result.innerHTML='<strong>'+ (mode.value==="case"?"نمونه تقسیم فقط برای سفارش جاری":"نمونه نسبت پیش‌فرض") +'</strong>'+lines;
+ result.innerHTML='<div class="amount"><span>درآمد ناخالص</span><strong>'+format(Number(gross))+'</strong></div><div class="amount"><span>هزینه‌های نمونه</span><strong>− '+format(Number(costs))+'</strong></div><div class="amount"><span>درآمد خالص قابل تقسیم</span><strong>'+format(Number(total))+'</strong></div><strong>'+ (mode.value==="case"?"نمونه تقسیم فقط برای سفارش جاری":"نمونه نسبت پیش‌فرض") +'</strong>'+lines;
 }
 mode.addEventListener("change",()=>{third.checked=false;p1.value=mode.value==="default"?"60":"70";p2.value=mode.value==="default"?"40":"30";render();});
 third.addEventListener("change",()=>{p1.value=third.checked?"50":"70";p2.value="30";render();});
-for(const element of [p1,p2,p3])element.addEventListener("input",render);
+for(const element of [p1,p2,p3,fee,expense,refund])element.addEventListener("input",render);
 render();
 })();
 </script>

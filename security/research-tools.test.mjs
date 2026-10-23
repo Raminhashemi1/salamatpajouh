@@ -12,9 +12,11 @@ test("research tools page is Persian, responsive and has all three modules", () 
 });
 
 test("inline JavaScript parses", () => {
-  const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
-  assert.ok(scripts.length > 0, "expected an inline script");
-  for (const script of scripts) assert.doesNotThrow(() => new Function(script[1]));
+  const start = html.indexOf("<script>");
+  const end = html.indexOf("</script>", start);
+  assert.ok(start >= 0 && end > start, "expected an inline script");
+  const script = html.slice(start + 8, end);
+  assert.doesNotThrow(() => new Function(script));
 });
 
 test("module copy clearly describes demo limitations", () => {

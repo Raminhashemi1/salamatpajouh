@@ -1,0 +1,25 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {approvedTariffFor,createQuote,legacyTomanToRial,formatCurrency,chooseRoute,verifiedPaymentMatches,canTransition} from "./payment-core.mjs";
+const now=new Date("2026-10-23T07:00:00Z");
+const base={currency:"IRR",annualAmountMinor:12000000,now};
+const expired={expiresAt:"2025-01-01T00:00:00Z"},active={expiresAt:"2027-01-01T00:00:00Z"};
+test("IRR approved tariff remains integer rials",()=>{
+ assert.equal(approvedTariffFor([{currency:"IRR",persianYear:1405,status:"approved",annualAmountMinor:12000000}],"IRR",1405).annualAmountMinor,12000000);
+});
+test("unapproved tariff cannot be billed",()=>assert.throws(()=>approvedTariffFor([{currency:"IRR",persianYear:1405,status:"draft",annualAmountMinor:12000000}],"IRR",1405),/TARIFF_NOT_APPROVED/));
+test("new user without declaration gets no discount",()=>assert.equal(createQuote(base).amountMinor,12000000));
+test("new user with declaration gets 10 percent off",()=>assert.equal(createQuote({...base,targetGroupDeclared:true}).amountMinor,10800000));
+test("expired member gets 30 percent renewal",()=>assert.equal(createQuote({...base,member:expired,targetGroupDeclared:true}).amountMinor,8400000));
+test("active membership blocks purchase",()=>assert.equal(createQuote({...base,member:active}).eligible,false));
+test("discounts are never added together",()=>assert.equal(createQuote({...base,member:expired,targetGroupDeclared:true}).discountPercent,30));
+test("toman-to-rial demo migration is x10 once",()=>assert.equal(legacyTomanToRial(1200000),12000000));
+test("reject unsupported domestic currency IRT",()=>assert.throws(()=>createQuote({...base,currency:"IRT"}),/UNSUPPORTED_CURRENCY/));
+test("format Rial as integer and USD as cents",()=>{assert.match(formatCurrency(12000000,"IRR"),/ریال/);assert.match(formatCurrency(4999,"USD","en-US"),/49\\.99 USD/);});
+test("payment disabled by default",()=>{assert.throws(()=>chooseRoute("IRR",{}),/PAYMENTS_NOT_CONFIGURED/);assert.throws(()=>chooseRoute("EUR",{international:{enabled:false,provider:"test",currencyAllowlist:["EUR"]}}),/PAYMENTS_NOT_CONFIGURED/);});
+test("only listed currencies allowed per route",()=>{const c={domestic:{enabled:true,provider:"domestic",currencyAllowlist:["IRR"]}};assert.equal(chooseRoute("IRR",c).family,"domestic");assert.throws(()=>chooseRoute("USD",c),/PAYMENTS_NOT_CONFIGURED/);});
+test("trusted verification must match order fields",()=>{const o={status:"pending",provider:"domestic",currency:"IRR",authority:"AUTH-1",amountMinor:10800000};const v={verified:true,provider:"domestic",currency:"IRR",authority:"AUTH-1",amountMinor:10800000,reference:"REF-111"};assert.equal(verifiedPaymentMatches(o,v),true);for(const change of [{verified:false},{provider:"other"},{currency:"USD"},{authority:"X"},{amountMinor:1},{reference:"A"}])assert.equal(verifiedPaymentMatches(o,{...v,...change}),false);});
+test("USD payment cannot settle IRR order",()=>{const o={status:"pending",provider:"intl",currency:"IRR",authority:"AUTH",amountMinor:12000000};assert.equal(verifiedPaymentMatches(o,{verified:true,provider:"intl",currency:"USD",authority:"AUTH",amountMinor:12000000,reference:"REF-1"}),false);});
+test("paid orders cannot transition to paid twice",()=>{assert.equal(canTransition("pending","paid"),true);assert.equal(canTransition("paid","paid"),false);});
+test("cancelled payments cannot become paid",()=>assert.equal(canTransition("cancelled","paid"),false));
+test("invalid amounts and expiry fail closed",()=>{assert.throws(()=>createQuote({...base,annualAmountMinor:-1}),RangeError);assert.throws(()=>legacyTomanToRial(Number.MAX_SAFE_INTEGER),RangeError);assert.throws(()=>createQuote({...base,member:{expiresAt:"INVALID"}}),TypeError);});

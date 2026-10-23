@@ -1,0 +1,27 @@
+name: Research tools checks
+on:
+  pull_request:
+    paths:
+      - "research-tools.html"
+      - "security/research-tools.test.mjs"
+      - ".github/workflows/research-tools-checks.yml"
+  push:
+    branches:
+      - "feature/interactive-research-modules"
+    paths:
+      - "research-tools.html"
+      - "security/research-tools.test.mjs"
+      - ".github/workflows/research-tools-checks.yml"
+permissions:
+  contents: read
+jobs:
+  validate-research-tools:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check research module markup and JavaScript
+        run: node --test security/research-tools.test.mjs

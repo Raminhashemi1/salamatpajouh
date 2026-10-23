@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#103c46">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="سلامت‌پژوه">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="description" content="سلامت‌پژوه نسخه ۰٫۹؛ نمونه وب‌اپ قابل نصب با پشتیبانی، منابع، کارگاه‌ها و آثار علمی">
+  <title>سلامت‌پژوه | سکوی آموزشی و پژوهشی سلامت</title>
+  <style>
+:root{--ink:#173a42;--ink2:#38515a;--teal:#0a5860;--deep:#103c46;--aqua:#e9f5f2;--lime:#c6e4c1;--blue:#eff5f7;--line:#e3eaec;--mute:#667b82;--bg:#f5f8f8;--white:#fff;--shadow:0 12px 32px rgba(23,58,66,.045)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.8}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.65;cursor:not-allowed}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #85beb4;outline-offset:2px}a{color:var(--teal)}h1,h2,h3,h4,p{margin-top:0}h1{font-size:24px;line-height:1.5;margin:4px 0 0}h2{font-size:24px;line-height:1.6}h3{font-size:17px;margin-bottom:12px}p{margin-bottom:15px}.app-shell{min-height:100vh;display:grid;grid-template-columns:264px minmax(0,1fr)}.sidebar{background:var(--deep);color:#fff;padding:27px 18px 20px;display:flex;flex-direction:column;min-height:100vh;position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:11px;margin:0 8px 40px}.brand-mark{width:45px;height:45px;display:grid;place-items:center;border:1px solid #8ccac3;border-radius:15px;background:#fff;overflow:hidden;flex-shrink:0}.brand-mark img{display:block;width:100%;height:100%;object-fit:cover;border-radius:14px}.brand strong{font-size:20px;letter-spacing:-.5px;display:block}.brand span{color:#abd0cf;font-size:11px}.side-caption{text-transform:uppercase;font-size:11px;letter-spacing:.3px;color:#9ec1c3;margin:0 15px 12px}.nav-list{display:grid;gap:6px}.nav-button{border:0;background:transparent;color:#d2e6e7;text-align:right;display:flex;gap:12px;align-items:center;padding:11px 14px;border-radius:11px;transition:.2s}.nav-button span{display:inline-flex;font-size:19px;align-items:center;justify-content:center;width:20px}.nav-button.active,.nav-button:hover{background:#236571;color:#fff}.nav-button.active{box-shadow:inset -3px 0 #b8e0cb}.separated{border-top:1px solid #31616a;padding-top:23px;margin-top:28px}.legacy-nav{display:flex;flex-direction:column;gap:8px;color:#acc7c9;font-size:12px;padding:4px 20px}.sidebar-bottom{margin-top:auto;padding:18px 13px 0;border-top:1px solid #32646b}.sidebar-bottom p{color:#aec7c9;font-size:11px;margin:11px 0}.main-content{min-width:0;padding:29px clamp(18px,3vw,44px) 23px;max-width:1650px;width:100%;margin:auto}.topbar{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:24px}.eyebrow{font-size:11px;letter-spacing:.2px;color:#568187;font-weight:700}.header-actions{display:flex;align-items:center;gap:14px}.status-dot{font-size:12px;color:#426669;white-space:nowrap}.status-dot:before{content:"";display:inline-block;border-radius:100%;background:#64b38d;width:8px;height:8px;margin-left:8px}.page{display:none}.page.active{display:block;animation:appear .26s ease}@keyframes appear{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}.hero{border-radius:21px;min-height:257px;background:linear-gradient(115deg,#0c444e,#196875 70%,#3a837e);position:relative;overflow:hidden;display:flex;align-items:center;padding:36px 44px;color:#fff;margin-bottom:20px}.hero-content{position:relative;z-index:2;max-width:570px}.hero-label{font-size:12px;color:#c7e9df;display:block;margin-bottom:11px}.hero h2{font-size:29px;line-height:1.6;margin:0 0 9px}.hero p{color:#d5e9ea;font-size:13px;max-width:475px;line-height:2}.hero-figure{position:absolute;left:10%;top:15%;width:240px;height:240px;display:grid;place-items:center}.ring{border:1px solid rgba(224,249,241,.2);border-radius:100%;position:absolute}.ring1{width:236px;height:236px}.ring2{width:176px;height:176px;border-width:18px;border-color:rgba(153,214,200,.15)}.hero-medal{width:109px;height:109px;background:#d5ebcf;border-radius:28px;transform:rotate(-9deg);color:#2f7268;font-size:42px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 10px 30px #082e3350}.hero-medal small{font-size:11px;transform:rotate(9deg)}.stat-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px;margin-bottom:21px}.stat-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px 20px;display:flex;flex-direction:column;box-shadow:var(--shadow)}.stat-card small{color:var(--mute);font-size:11px}.stat-card strong{font-size:27px;line-height:1.5;margin:5px 0}.stat-icon{font-size:20px;color:var(--teal);height:24px}.muted{color:var(--mute);font-size:12px}.two-column{display:grid;grid-template-columns:1.22fr 1fr;gap:18px}.panel{background:#fff;border-radius:18px;border:1px solid var(--line);padding:24px;min-width:0;box-shadow:var(--shadow);margin-bottom:18px}.panel-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}.panel-heading h3{margin:0}.pillar-list{display:grid;gap:8px}.pillar{width:100%;background:#fbfdfd;border:1px solid #e9eff0;border-radius:13px;padding:11px 14px;display:flex;align-items:center;text-align:right;gap:13px;color:var(--ink)}.pillar:hover{background:var(--aqua);border-color:#bdd7d1}.pillar-num{background:#e1f1e9;color:#2e6c63;padding:7px 11px;border-radius:10px;font-weight:bold}.pillar strong,.pillar small{display:block}.pillar small{font-size:11px;color:var(--mute)}.pillar b{margin-right:auto;color:#67938e}.soft-block{background:#eef6f4;border-radius:14px;padding:15px 17px;color:#315f61}.soft-block strong{display:block;margin-bottom:3px}.progress-title{display:flex;justify-content:space-between;font-size:12px}.mini-progress{margin:23px 0}.progress-track{height:8px;overflow:hidden;border-radius:12px;background:#e4eeee;margin-top:10px}.progress-fill{background:#428b81;height:100%;border-radius:12px;transition:width .3s}.recent-box{background:#fafcfc;border:1px solid #e8eeee;color:#5d757c;padding:13px;border-radius:10px;font-size:12px;margin-bottom:18px}.button{border:0;border-radius:11px;padding:10px 17px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;transition:background .2s,color .2s}.button.primary{background:#12646b;color:white}.button.primary:hover{background:#0a4c54}.button.secondary{background:#e4f1ee;color:#185b59}.button.secondary:hover{background:#d2e9e3}.button.light{background:#d3eddb;color:#15585a;padding:10px 20px;margin-top:4px}.button.ghost{background:#fff;border:1px solid #dfeaec;color:var(--teal)}.button.ghost:hover{background:#eff7f7}.button.small{font-size:12px;padding:7px 12px}.button.full{width:100%}.button.danger{background:#fff1ef;color:#9b3b34}.info-strip{margin:11px 0 21px;border-right:3px solid #8ab8a9;background:#ebf4f2;padding:13px 18px;color:#51716f;border-radius:9px;font-size:12px}.footer{text-align:center;padding:18px;color:#9aabae;font-size:11px}.page-intro{padding:7px 1px 10px}.page-intro h2{margin:6px 0}.page-intro p{max-width:850px;color:var(--mute)}.form-layout{grid-template-columns:1fr 1.03fr;align-items:start}form label{display:grid;gap:6px;font-weight:700;font-size:12px;margin-bottom:14px;color:#426169}input,select,textarea{border:1px solid #d8e3e5;background:#fafdfd;border-radius:9px;color:#173a42;padding:11px 12px;width:100%;min-width:0;direction:rtl}textarea{resize:vertical}input[type=url]{direction:ltr;text-align:left}input[type=date]{direction:ltr;text-align:right}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field-help{display:block;color:var(--mute);font-size:11px;margin:-9px 0 13px}.pill{color:#216a66;font-weight:700;background:#e5f3ee;border-radius:40px;padding:5px 10px;font-size:11px;white-space:nowrap}.pill.tiny{font-size:10px}.empty-state{display:flex;flex-direction:column;min-height:240px;align-items:center;justify-content:center;text-align:center;color:#6b8286;max-width:450px;margin:auto;gap:4px}.empty-symbol{font-size:45px;color:#95bdb0}.empty-state p{font-size:13px}.plan-lead{background:#edf7f4;border-radius:11px;padding:12px 14px;font-size:12px;margin-bottom:14px}.plan-days{display:grid;gap:8px}.plan-day{border:1px solid #e5eced;border-radius:10px;padding:11px 12px;display:flex;gap:12px;align-items:flex-start}.plan-day input{width:17px;height:17px;flex-shrink:0;margin-top:6px;accent-color:#17676a}.plan-day label{flex:1;display:block;margin:0;cursor:pointer}.plan-day strong{display:block}.plan-day small{display:block;color:#658080;font-weight:400}.plan-day.done{background:#f2f9f5}.plan-day.done strong{text-decoration:line-through;color:#78948e}.toolbar{display:flex;align-items:flex-end;gap:12px;margin:8px 0 20px;flex-wrap:wrap}.toolbar .input-with-label{min-width:185px;flex:1;max-width:350px;margin:0}.toolbar .input-with-label:first-child{flex:2;max-width:550px}.resource-grid,.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:19px}.resource-card,.summary-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;min-width:0;box-shadow:var(--shadow);display:flex;flex-direction:column}.badge-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}.badge{background:#edf5f4;color:#396d6b;font-size:10px;border-radius:7px;padding:3px 8px}.badge.outline{background:#f9faf9;border:1px solid #e3ebea;color:#5b7478}.resource-card h3,.summary-card h3{font-size:16px;margin-bottom:7px}.resource-card p,.summary-card p{color:#657b7f;font-size:12px;line-height:2}.resource-card .card-foot,.summary-card .card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:11px;border-top:1px solid #edf1f2;gap:8px}.card-link{border:0;background:none;color:#0d6a71;font-size:12px;font-weight:bold;padding:2px 0}.card-foot small{color:#889a9f;font-size:10px}.add-resource{margin-top:10px}.resource-form,.summary-form{display:grid;grid-template-columns:1fr 1fr;gap:7px 14px}.resource-form label,.summary-form label{margin:0}.resource-form button,.summary-form button{align-self:end;height:44px}.summary-form .wide{grid-column:1/-1}.summary-card .summary-content{white-space:pre-line}.summary-card .clamp{max-height:115px;overflow:hidden}.summary-card.expanded .clamp{max-height:none}.warning-tag{color:#995f31;font-size:11px}.quiz-layout{grid-template-columns:350px 1fr;align-items:start}.quiz-layout .panel{min-height:340px}.history-block{margin-top:27px;font-size:12px}.history-entry{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid #e9eeee}.history-entry span{color:var(--mute)}.quiz-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}.quiz-progress{display:flex;gap:5px}.quiz-progress span{width:23px;height:5px;background:#dce8e7;border-radius:5px}.quiz-progress .answered{background:#469587}.question{font-weight:700;font-size:18px;line-height:1.9;margin:18px 0}.answer-choice{border:1px solid #dbe7e8;border-radius:11px;padding:12px 14px;display:flex;align-items:center;gap:13px;margin-bottom:9px;cursor:pointer}.answer-choice:hover{background:#f4f9f8}.answer-choice.selected{border-color:#4b9e90;background:#edf9f4}.answer-choice input{width:18px;height:18px;accent-color:#267a74}.quiz-controls{display:flex;justify-content:space-between;gap:10px;margin-top:22px}.result-top{background:#e8f5f0;text-align:center;border-radius:14px;padding:23px;margin-bottom:16px}.result-top strong{font-size:37px;display:block;line-height:1.4}.review-entry{margin:12px 0;padding:14px;border:1px solid #e4eaea;border-radius:12px}.review-entry .correct{color:#287459}.review-entry .incorrect{color:#a6543a}.review-entry p{margin:8px 0;font-size:12px}.notice{padding:10px 15px;background:#e4f2eb;color:#1f6e56;border:1px solid #b9d7c7;border-radius:10px;margin-bottom:15px}.notice.error{background:#fff0ef;color:#a14c44;border-color:#efc7bf}.empty-grid{grid-column:1/-1;background:#fff;border-radius:14px;padding:35px;color:var(--mute);text-align:center}
+@media(max-width:1200px){.stat-grid{grid-template-columns:repeat(2,1fr)}.resource-grid,.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-figure{opacity:.44;left:0}.quiz-layout{grid-template-columns:300px 1fr}}@media(max-width:930px){.app-shell{grid-template-columns:1fr}.sidebar{position:static;height:auto;min-height:0;padding:13px 18px}.brand{margin:0 0 8px}.brand-mark{width:35px;height:35px}.brand strong{font-size:16px}.side-caption,.legacy-nav,.sidebar-bottom{display:none}.nav-list{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;padding:6px 0}.nav-button{white-space:nowrap;flex-shrink:0;font-size:12px;padding:9px 10px}.main-content{padding:22px 16px}.two-column,.form-layout,.quiz-layout{grid-template-columns:1fr}.hero{min-height:230px}.hero-figure{left:0}}@media(max-width:620px){.topbar{align-items:flex-start}.topbar h1{font-size:19px}.header-actions{display:flex;flex-direction:column;align-items:flex-end;gap:4px}.hero{padding:25px 21px}.hero h2{font-size:22px}.hero-figure{opacity:.2}.stat-grid{gap:9px}.stat-card{padding:15px 13px}.stat-card small{font-size:10px}.stat-card strong{font-size:24px}.panel{padding:17px}.resource-grid,.summary-grid{grid-template-columns:1fr}.resource-form,.summary-form,.field-row{grid-template-columns:1fr}.quiz-controls{flex-wrap:wrap}.quiz-controls button{flex:1}}
+/* جلوگیری از گسترش عرض صفحه در نوار ناوبری موبایل */
+.sidebar{min-width:0}
+@media(max-width:930px){.app-shell{grid-template-columns:minmax(0,1fr)}.sidebar{width:100%;max-width:100vw;overflow:hidden}.nav-list{max-width:100%;min-width:0}}
+
+/* v0.4 — ماژول کارگاه‌های آموزشی */
+.workshop-notice{display:flex;align-items:flex-start;gap:17px;padding:18px 21px;border:1px solid #c9e4de;background:linear-gradient(115deg,#e9f6f2,#f7fbfa);border-radius:16px;margin:0 0 23px}.workshop-notice-icon{display:grid;place-items:center;flex-shrink:0;width:47px;height:47px;border-radius:13px;background:#c9e8dc;color:#0c555b;font-size:27px}.workshop-notice strong{display:block;font-size:14px;margin:0 0 3px}.workshop-notice p{font-size:12px;margin:0;color:#557378;max-width:850px}.workshop-summary-line{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:8px}.workshop-summary-line h3{margin:1px 0}.workshop-counts{display:flex;gap:8px;flex-wrap:wrap}.workshop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 22px}.workshop-card{background:white;border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}.workshop-card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}.workshop-card-top .badge-row{margin:0}.workshop-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:#e2f3ee;color:#145e61;font-size:26px;flex-shrink:0}.workshop-card h3{font-size:16px;line-height:1.7;margin-bottom:7px}.workshop-card>p{color:var(--mute);font-size:12px;min-height:48px;margin-bottom:13px}.workshop-meta{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px;color:#4f7074;font-size:11px}.workshop-meta span{background:#f3f8f7;border-radius:7px;padding:5px 8px}.workshop-details{border-top:1px solid var(--line);padding:11px 0;margin-top:auto}.workshop-details summary{color:#11646b;font-size:12px;font-weight:bold;cursor:pointer}.workshop-details ul{padding:0 19px 0 0;margin:8px 0 4px;font-size:12px;color:#506a70}.workshop-details li{margin:4px 0}.workshop-details p{margin:8px 0}.workshop-action{margin-top:10px}.workshop-my-list{margin-bottom:18px}.workshop-interest-list{display:grid;gap:8px}.workshop-interest{display:flex;justify-content:space-between;align-items:center;gap:15px;background:#f3f9f7;border:1px solid #e1eeeb;border-radius:11px;padding:10px 13px;font-size:12px}.workshop-interest>span{min-width:0}.workshop-interest .card-link{white-space:nowrap}
+@media(max-width:1200px){.workshop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.workshop-grid{grid-template-columns:1fr}.workshop-notice{padding:14px;gap:11px}.workshop-notice-icon{width:36px;height:36px;font-size:22px}.workshop-card{padding:17px}}
+
+.workshop-svg{width:22px;height:22px;display:block;stroke:currentColor}.workshop-icon .workshop-svg,.workshop-notice-icon .workshop-svg{width:24px;height:24px}.nav-button .workshop-svg{width:19px;height:19px}
+
+/* v0.5 — مدیریت نمایشی کارگاه‌ها */
+.admin-warning{background:#fff8e9;border-color:#eedbad}.admin-warning .workshop-notice-icon{background:#fff0d0;color:#84580b}
+.admin-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 18px}
+.admin-stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px;box-shadow:var(--shadow)}
+.admin-stat small{display:block;color:var(--mute);font-size:12px}.admin-stat strong{display:block;font-size:25px;color:#154953;margin-top:4px}
+.admin-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:18px;align-items:start}
+.admin-form-panel,.admin-list-panel{min-width:0}
+.admin-form-panel .field-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+.admin-form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.admin-form-actions .button{flex:1;min-width:145px}
+.admin-filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.7fr);gap:10px;margin-bottom:14px}
+.admin-item{border:1px solid var(--line);border-radius:12px;padding:13px;margin:0 0 11px;background:#fbfefd}
+.admin-item-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.admin-item-heading strong{font-size:13px;line-height:1.8}
+.admin-item p{font-size:11px;color:var(--mute);margin:8px 0 10px}
+.admin-item-actions{display:flex;gap:6px;flex-wrap:wrap}
+.admin-item-actions .button{font-size:11px;padding:6px 10px}
+.admin-list-footer{padding-top:8px;border-top:1px solid var(--line)}
+@media(max-width:1100px){.admin-layout{grid-template-columns:1fr}}
+@media(max-width:620px){.admin-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-form-panel .field-row,.admin-filters{grid-template-columns:1fr}.admin-form-actions{flex-direction:column}.admin-item-heading{flex-direction:column}}
+
+/* v0.6 — عضویت، تفاوت منابع و بازخورد */
+.billing-summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:0 0 20px}
+.billing-stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;box-shadow:var(--shadow)}
+.billing-stat small,.billing-stat strong,.billing-stat span{display:block}.billing-stat small{color:var(--mute);font-size:12px}.billing-stat strong{font-size:21px;color:#174e55;margin:3px 0}.billing-stat span{font-size:11px}
+.bill-columns{grid-template-columns:1fr 1fr;align-items:start}
+.price-display{border:1px solid #c9e4da;background:#eef7f3;border-radius:14px;padding:22px;text-align:center;margin:10px 0 15px}
+.price-display strong{display:block;font-size:34px;color:#115d5e;line-height:1.3}.price-display span{font-size:12px;color:#527878}
+.bill-breakdown{margin:15px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.bill-breakdown>div{display:flex;justify-content:space-between;gap:10px;padding:11px 12px;border-bottom:1px solid var(--line);font-size:12px}.bill-breakdown>div:last-child{border:0}.bill-breakdown strong{white-space:nowrap}
+.bill-breakdown .bill-final{background:#edf6f3;color:#165e60;font-weight:bold}
+.bill-pending{border:1px dashed #83b6aa;padding:15px;border-radius:12px;margin:16px 0;background:#f9fdfb;font-size:13px}.bill-pending p{margin:5px 0}.bill-pending-actions{display:flex;flex-wrap:wrap;gap:9px}
+.scenario-buttons{display:flex;gap:10px;flex-wrap:wrap}.scenario-buttons .button{font-size:12px;flex:1;min-width:145px}
+.subhead{font-size:15px;margin:27px 0 9px}.bill-history{max-height:220px;overflow:auto}.bill-history .history-entry strong{white-space:nowrap}
+.bill-rules{margin-top:20px;border-radius:12px;background:#f1f6f5;padding:15px;font-size:12px;color:#4c686a}.bill-rules strong{color:#144f57}.bill-rules p{margin:6px 0 0}
+.checkbox-line{display:flex!important;align-items:flex-start;gap:9px;cursor:pointer}.checkbox-line input{width:17px;height:17px;flex:0 0 17px;margin:6px 0;accent-color:#127970}
+.feedback-list{display:grid;gap:10px}.feedback-item{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fbfefd;min-width:0}
+.feedback-item p{font-size:12px;line-height:2;overflow-wrap:anywhere;white-space:pre-wrap;margin:9px 0}.feedback-header{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:13px}
+.feedback-buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.release-list{overflow-x:auto;margin-bottom:18px}.release-table{width:100%;border-collapse:collapse;text-align:right;font-size:11px}.release-table th,.release-table td{padding:11px 8px;border-bottom:1px solid var(--line);text-align:right}.release-table th{white-space:nowrap;color:#516b6d}
+@media(max-width:1050px){.bill-columns{grid-template-columns:1fr}}@media(max-width:720px){.billing-summary-grid{grid-template-columns:1fr}.billing-stat{padding:14px}.price-display strong{font-size:27px}}
+
+
+/* v0.7 — پشتیبانی، آثار علمی و قیمت‌گذاری مستقل از منابع */
+.demo-reply{background:#eaf6f3;border:1px solid #c9e2da;border-radius:10px;padding:11px;margin:12px 0;color:#1c5859;font-size:12px}
+.demo-reply p{margin:4px 0}
+#support-admin-list .feedback-item,#works-admin-list .feedback-item{background:white}
+#support-admin-list .feedback-item label{display:block;margin:10px 0 7px}
+#works-public-list a,#works-own-list a,#works-admin-list a{color:#156e72;font-size:12px;overflow-wrap:anywhere}
+#works-own-list .feedback-item{background:#f9fcfb}
+@media(max-width:620px){#support-admin-list .feedback-buttons,#works-admin-list .feedback-buttons{flex-wrap:wrap}}
+/* رکن‌های اضافی مدیریت: ناوبری دسکتاپ باید پیمایش عمودی داشته باشد */
+@media(min-width:931px){.sidebar{overflow-y:auto;overscroll-behavior:contain}}
+
+/* v0.8 — خوداظهاری اختیاری جامعه هدف */
+.eligibility-box{background:#f2f9f8;border:1px solid #b9dcd5;border-radius:14px;padding:14px;margin:14px 0}
+.eligibility-check{display:flex;align-items:flex-start;gap:11px;cursor:pointer}
+.eligibility-check input{flex:0 0 19px;width:19px;height:19px;accent-color:#168c8c;margin-top:5px}
+.eligibility-check span{display:block;flex:1}
+.eligibility-check strong{display:block;font-size:14px;color:#184e55}
+.eligibility-check small{display:block;font-size:12px;line-height:1.9;font-weight:400;color:#536e72;margin-top:5px}
+.eligibility-box p{margin:9px 0 0;line-height:1.8}
+.eligibility-box[hidden]{display:none!important}
+
+</style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="ناوبری اصلی">
+      <div class="brand"><div class="brand-mark"><img src="icons/icon-192.png" alt="نشان سلامت‌پژوه"></div><div><strong>سلامت‌پژوه</strong><span>همراه مسیر یادگیری</span></div></div>
+      <div class="side-caption">پنل آمادگی آزمون</div>
+      <nav id="primary-nav" class="nav-list" aria-label="بخش‌های برنامه">
+        <button class="nav-button active" type="button" data-page="dashboard"><span>◫</span> نمای کلی</button>
+        <button class="nav-button" type="button" data-page="coaching"><span>◇</span> مشاوره و برنامه‌ریزی</button>
+        <button class="nav-button" type="button" data-page="resources"><span>▤</span> منابع اختصاصی</button>
+        <button class="nav-button" type="button" data-page="summaries"><span>☷</span> خلاصه‌های مطالعه</button>
+        <button class="nav-button" type="button" data-page="quizzes"><span>◉</span> آزمون‌های تمرینی</button>
+        <button class="nav-button" type="button" data-page="workshops"><span aria-hidden="true"><svg class="workshop-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M4 3v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3"/><path d="m8 21 4-4 4 4"/><path d="M8 9h8"/><path d="M8 12h5"/></svg></span> کارگاه‌های آموزشی</button>
+        <button class="nav-button" type="button" data-page="membership"><span aria-hidden="true">◈</span> عضویت و پرداخت</button>
+        <button class="nav-button" type="button" data-page="feedback"><span aria-hidden="true">✉</span> نظرات و پیشنهادها</button>
+        <button class="nav-button" type="button" data-page="support"><span aria-hidden="true">☏</span> پشتیبانی کاربران</button>
+        <button class="nav-button" type="button" data-page="works"><span aria-hidden="true">✎</span> اشتراک آثار علمی</button>
+      </nav>
+      <div class="side-caption separated">پنل برگزارکننده · نسخه نمایشی</div>
+      <nav class="nav-list" aria-label="پنل برگزارکننده"><button class="nav-button" type="button" data-page="workshop-admin"><span>▦</span> مدیریت کارگاه‌ها</button><button class="nav-button" type="button" data-page="finance-admin"><span>⚙</span> تعرفه سالانه و بازخورد</button><button class="nav-button" type="button" data-page="support-admin"><span>☏</span> رسیدگی به تیکت‌ها</button><button class="nav-button" type="button" data-page="works-admin"><span>✓</span> بررسی آثار علمی</button></nav>
+      <div class="side-caption separated">هسته قدیمی محصول</div>
+      <div class="legacy-nav"><span>پژوهش و پایان‌نامه</span><span>سیاست‌گذاری سلامت</span><span>اقتصاد سلامت</span></div>
+      <div class="sidebar-bottom"><span class="pill tiny">نسخه آزمایشی ۰٫۸</span><p>داده‌های این نمونه فقط روی همین مرورگر ذخیره می‌شوند.</p></div>
+    </aside>
+    <main class="main-content" id="main-content">
+      <header class="topbar"><div><div class="eyebrow">سکوی آموزشی و پژوهشی سلامت</div><h1 id="page-title">مسیر شما تا روز آزمون</h1></div><div class="header-actions"><span id="status-label" class="status-dot">نمونه وب‌اپ</span><button id="install-app" class="button primary small" type="button" aria-label="نصب سلامت‌پژوه">نصب اپ</button><button id="export-data" class="button ghost small" type="button">دریافت داده‌ها</button></div></header>
+      <div id="live-notice" class="notice" role="status" aria-live="polite" hidden></div>
+      <section id="page-dashboard" class="page active" aria-label="داشبورد">
+        <div class="hero"><div class="hero-content"><span class="hero-label">پنج مسیر یکپارچه، یک هدف روشن</span><h2>برای آزمون آماده شو،<br>با برنامه و شواهد پیش برو.</h2><p>از برنامه‌ریزی شخصی و منابع تخصصی تا خلاصه، آزمون و کارگاه‌های آموزشی؛ همه در یک فضای فارسی.</p><button type="button" data-goto="coaching" class="button light">برنامه مطالعه‌ام را بسازم <span aria-hidden="true">←</span></button></div><div class="hero-figure" aria-hidden="true"><div class="ring ring1"></div><div class="ring ring2"></div><div class="hero-medal">✓<small>مسیر یادگیری</small></div></div></div>
+        <div class="stat-grid">
+          <div class="stat-card"><span class="stat-icon">◷</span><small>ساعت مطالعه برنامه‌ریزی‌شده / هفته</small><strong id="stat-hours">—</strong><span class="muted">بر اساس برنامه شخصی</span></div>
+          <div class="stat-card"><span class="stat-icon">▤</span><small>منابع در کتابخانه</small><strong id="stat-resources">۰</strong><span class="muted">نمونه + افزوده‌های شما</span></div>
+          <div class="stat-card"><span class="stat-icon">▣</span><small>یادداشت‌های خلاصه</small><strong id="stat-summaries">۰</strong><span class="muted">برای مرور سریع</span></div>
+          <div class="stat-card"><span class="stat-icon">◎</span><small>میانگین عملکرد آزمون</small><strong id="stat-accuracy">—</strong><span class="muted">فقط نتایج آزمون‌های این نسخه</span></div>
+          <div class="stat-card"><span class="stat-icon"><svg class="workshop-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M4 3v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3"/><path d="m8 21 4-4 4 4"/><path d="M8 9h8"/><path d="M8 12h5"/></svg></span><small>کارگاه‌های موردعلاقه</small><strong id="stat-workshops">۰</strong><span class="muted">ثبت آزمایشی در مرورگر</span></div>
+        </div>
+        <div class="two-column"><div class="panel"><div class="panel-heading"><div><span class="eyebrow">نقشه راه</span><h3>پنج رکن آمادگی و آموزش</h3></div></div><div class="pillar-list">
+          <button class="pillar" type="button" data-goto="coaching"><span class="pillar-num">۰۱</span><span><strong>مشاوره و برنامه اختصاصی</strong><small>هدف‌گذاری و تنظیم ساعت‌های هفتگی</small></span><b>←</b></button>
+          <button class="pillar" type="button" data-goto="resources"><span class="pillar-num">۰۲</span><span><strong>تأمین و مدیریت منابع</strong><small>دسته‌بندی با رشته، مقطع و موضوع</small></span><b>←</b></button>
+          <button class="pillar" type="button" data-goto="summaries"><span class="pillar-num">۰۳</span><span><strong>خلاصه منابع</strong><small>نکات کلیدی و مرور موضوع‌محور</small></span><b>←</b></button>
+          <button class="pillar" type="button" data-goto="quizzes"><span class="pillar-num">۰۴</span><span><strong>تست و تحلیل عملکرد</strong><small>سؤالات تألیفی با پاسخ تشریحی</small></span><b>←</b></button>
+          <button class="pillar" type="button" data-goto="workshops"><span class="pillar-num">۰۵</span><span><strong>کارگاه‌های آموزشی</strong><small>مشاهده سرفصل، قالب برگزاری و اعلام علاقه‌مندی</small></span><b>←</b></button>
+        </div></div><div class="panel"><div class="panel-heading"><div><span class="eyebrow">وضعیت شما</span><h3>جمع‌بندی فعالیت‌ها</h3></div></div><div id="dashboard-profile" class="soft-block">هنوز برنامه مطالعاتی ایجاد نشده است.</div><div class="mini-progress"><div class="progress-title"><span>گام‌های برنامه این هفته</span><strong id="dashboard-progress-text">۰ از ۰</strong></div><div class="progress-track"><div id="dashboard-progress-bar" class="progress-fill" style="width:0%"></div></div></div><div id="dashboard-recent" class="recent-box">اولین آزمون خود را در بخش «آزمون‌های تمرینی» شروع کنید.</div><button class="button secondary full" data-goto="quizzes" type="button">شروع آزمون آزمایشی</button></div></div>
+        <div class="two-column" style="margin-top:18px"><div class="panel"><div class="panel-heading"><div><span class="eyebrow">مدل مالی شفاف</span><h3>عضویت یک‌ساله؛ ۱۰٪ تخفیف جامعه هدف</h3></div></div><p class="muted">برای جامعه هدف، عضویت اولیه با خوداظهاری ۱۰٪ تخفیف دارد؛ منابع جدید در طول اشتراک رایگان‌اند و تمدید همه اعضا با ۳۰٪ تخفیف انجام می‌شود.</p><button class="button primary" type="button" data-goto="membership">مشاهده حق عضویت و صورت‌حساب ←</button></div><div class="panel"><div class="panel-heading"><div><span class="eyebrow">صدای کاربران</span><h3>نظر شما برای ما مهم است</h3></div></div><p class="muted">پیشنهاد برای منابع جدید، گزارش خطا یا ارزیابی خدمات را در بخش بازخورد ثبت کنید.</p><button class="button secondary" type="button" data-goto="feedback">ثبت نظر یا پیشنهاد ←</button></div></div>
+        <div class="two-column" style="margin-top:18px"><div class="panel"><div class="panel-heading"><h3>☏ پشتیبانی و رفع مشکل</h3></div><p class="muted">مشکلات عضویت، آزمون، منابع یا کارگاه را با شماره پیگیری آزمایشی ثبت کنید.</p><button class="button primary" data-goto="support" type="button">ایجاد درخواست پشتیبانی ←</button></div><div class="panel"><div class="panel-heading"><h3>✎ اشتراک آثار علمی</h3></div><p class="muted">آثار پژوهشی خود را با رعایت حق نشر برای بررسی و انتشار پیشنهاد دهید.</p><button class="button secondary" data-goto="works" type="button">معرفی اثر علمی ←</button></div></div>
+        <div class="info-strip"><strong>دامنه این نسخه:</strong> پنج ماژول آموزشی به نقشه سلامت‌پژوه اضافه شده‌اند. مسیرهای پایان‌نامه، سیاست‌گذاری و اقتصاد سلامت در نقشه محصول حفظ شده‌اند، اما در این نمونه بازپیاده‌سازی نشده‌اند.</div>
+      </section>
+      <section id="page-coaching" class="page" aria-label="مشاوره و برنامه‌ریزی">
+        <div class="page-intro"><span class="eyebrow">رکن اول</span><h2>مشاوره و برنامه مطالعاتی</h2><p>مشخصات آزمون و ظرفیت زمانی خود را وارد کنید تا یک برنامه هفتگی ابتدایی و قابل ویرایش بسازید. این برنامه جایگزین مشاوره تخصصی انسانی نیست.</p></div>
+        <div class="two-column form-layout"><div class="panel"><h3>پروفایل داوطلب</h3><form id="plan-form">
+          <div class="field-row"><label>مقطع آزمون<select id="exam-level" required><option value="ارشد">کارشناسی ارشد</option><option value="دکتری">دکتری</option></select></label><label>رشته هدف<select id="exam-field" required><option value="مدیریت خدمات سلامت">مدیریت خدمات سلامت</option><option value="اقتصاد سلامت">اقتصاد سلامت</option><option value="اپیدمیولوژی">اپیدمیولوژی</option><option value="سایر رشته‌ها">سایر رشته‌ها</option></select></label></div>
+          <div class="field-row"><label>زمان مطالعه هفتگی (ساعت)<input type="number" id="weekly-hours" min="4" max="70" value="۱۴" required></label><label>سطح آمادگی فعلی<select id="current-level"><option value="مقدماتی">مقدماتی</option><option value="متوسط">متوسط</option><option value="پیشرفته">پیشرفته</option></select></label></div>
+          <label>تاریخ آزمون (اختیاری)<input type="date" id="exam-date" aria-describedby="date-hint"></label><small id="date-hint" class="field-help">اگر تاریخ را نمی‌دانید، خالی بگذارید؛ سامانه تاریخی حدس نمی‌زند.</small>
+          <label>اولویت شخصی یا نقطه ضعف (اختیاری)<textarea id="weakness" rows="3" maxlength="320" placeholder="مثلاً آمار زیستی و تحلیل مقالات"></textarea></label>
+          <button class="button primary full" type="submit">ساخت یا به‌روزرسانی برنامه</button>
+        </form></div><div class="panel"><div class="panel-heading"><div><span class="eyebrow">خروجی قابل استفاده</span><h3>برنامه هفتگی من</h3></div><span id="plan-level-pill" class="pill">هنوز ایجاد نشده</span></div><div id="plan-output" class="empty-state"><span class="empty-symbol">◇</span><p>با تکمیل فرم، تقسیم زمان و چک‌لیست هفتگی شما در همین‌جا نمایش داده می‌شود.</p></div></div></div>
+        <div class="info-strip">منطق برنامه: تقسیم زمان بین مطالعه منابع، تست‌زنی و مرور؛ موضوعات پیشنهادی متناسب با رشته انتخابی. سرفصل‌ها و ضرایب رسمی آزمون باید جداگانه از مراجع معتبر تأیید شوند.</div>
+      </section>
+      <section id="page-resources" class="page" aria-label="منابع اختصاصی">
+        <div class="page-intro"><span class="eyebrow">رکن دوم</span><h2>کتابخانه منابع اختصاصی</h2><p>منابع آموزشی را بر اساس موضوع پیدا کنید و منابع خودتان را ثبت کنید. مدخل‌های پیش‌فرض، «بسته موضوعی نمونه» هستند و نباید با فهرست رسمی منابع کنکور اشتباه شوند.</p></div>
+        <div class="toolbar"><label class="input-with-label">جست‌وجو<input id="resource-search" type="search" placeholder="جست‌وجوی عنوان یا موضوع..."></label><label class="input-with-label">موضوع<select id="resource-subject"><option value="all">همه موضوعات</option></select></label><label class="input-with-label">مقطع<select id="resource-level"><option value="all">همه مقاطع</option><option value="ارشد">ارشد</option><option value="دکتری">دکتری</option><option value="هر دو">هر دو</option></select></label></div>
+        <div id="resource-grid" class="resource-grid"></div>
+        <div class="panel add-resource"><div><span class="eyebrow">کتابخانه شخصی</span><h3>افزودن منبع اختصاصی</h3><p class="muted">فقط عنوان، دسته و نشانی دلخواه ذخیره می‌شود؛ فایل یا محتوای منبع به سرور ارسال نمی‌شود.</p></div><form id="resource-form" class="resource-form"><label>عنوان<input id="new-resource-title" maxlength="100" required placeholder="نام کتاب، جزوه یا نشانی درس"></label><label>موضوع<input id="new-resource-subject" maxlength="60" required placeholder="مثلاً روش تحقیق"></label><label>مقطع<select id="new-resource-level"><option>هر دو</option><option>ارشد</option><option>دکتری</option></select></label><label>لینک (اختیاری)<input id="new-resource-url" type="url" placeholder="https://..."></label><button class="button primary" type="submit">ثبت منبع</button></form></div>
+      </section>
+      <section id="page-summaries" class="page" aria-label="خلاصه منابع">
+        <div class="page-intro"><span class="eyebrow">رکن سوم</span><h2>خلاصه‌های کاربردی مطالعه</h2><p>نمونه‌ای از درس‌نامه‌های کوتاه تألیفی برای مرور مفاهیم کلیدی. برای محتوای واقعی هر منبع، نسخه مجاز و استناد دقیق باید افزوده و بازبینی شود.</p></div>
+        <div class="toolbar"><label class="input-with-label">جست‌وجوی خلاصه<input id="summary-search" type="search" placeholder="عنوان، نکته، کلیدواژه..."></label><label class="input-with-label">موضوع<select id="summary-subject"><option value="all">همه موضوعات</option></select></label></div>
+        <div id="summary-grid" class="summary-grid"></div>
+        <div class="panel"><div class="panel-heading"><div><h3>یادداشت شخصی من</h3><p class="muted">خلاصه خودتان را بنویسید؛ تولید خلاصه خودکار مبتنی بر هوش مصنوعی هنوز فعال نیست.</p></div></div><form id="summary-form" class="summary-form"><label>عنوان<input id="new-summary-title" required maxlength="100" placeholder="خلاصه فصل یا مبحث"></label><label>موضوع<input id="new-summary-subject" required maxlength="60" placeholder="مثلاً اپیدمیولوژی"></label><label class="wide">متن خلاصه<textarea id="new-summary-text" required maxlength="2200" rows="4" placeholder="مهم‌ترین یافته‌ها، فرمول‌ها، نکات قابل مرور..."></textarea></label><button class="button primary" type="submit">ذخیره خلاصه شخصی</button></form></div>
+      </section>
+      <section id="page-quizzes" class="page" aria-label="آزمون‌های تمرینی">
+        <div class="page-intro"><span class="eyebrow">رکن چهارم</span><h2>آزمون‌های تمرینی و تحلیل پاسخ</h2><p>با تست‌های تألیفیِ آموزشی، دانش خود را بسنجید. پرسش‌ها نمونه هستند و ادعای بازنشر آزمون‌های رسمی یا پیش‌بینی رتبه کنکور ندارند.</p></div>
+        <div class="two-column quiz-layout"><div class="panel"><h3>تنظیم آزمون</h3><form id="quiz-settings"><label>موضوع آزمون<select id="quiz-topic"><option value="all">ترکیبی از همه مباحث</option></select></label><div class="field-row"><label>تعداد سؤال<select id="quiz-count"><option value="5">۵ سؤال</option><option value="10">۱۰ سؤال</option></select></label><label>شیوه نمایش<select id="quiz-mode"><option value="practice">تمرینی (بازخورد پایان آزمون)</option><option value="exam">شبیه‌سازی زمان‌دار (۹۰ ثانیه به‌ازای هر سؤال)</option></select></label></div><button type="submit" class="button primary full" id="quiz-start">شروع آزمون</button></form><div id="quiz-history" class="history-block"></div></div>
+        <div class="panel quiz-panel"><div id="quiz-stage" class="empty-state"><span class="empty-symbol">◉</span><h3>برای شروع آماده‌اید؟</h3><p>موضوع و تعداد سؤال را انتخاب کنید. پس از ثبت پاسخ‌ها، امتیاز و توضیح علمی هر سؤال نمایش داده می‌شود.</p></div></div></div>
+        <div class="info-strip">برای بانک سؤال واقعی باید سال آزمون، رشته، سطح، منبع و حقوق انتشار هر سؤال ثبت شود؛ کیفیت پاسخ‌ها نیز باید توسط متخصص موضوعی بازبینی گردد.</div>
+      </section>
+      <section id="page-workshops" class="page" aria-label="کارگاه‌های آموزشی">
+        <div class="page-intro"><span class="eyebrow">رکن پنجم</span><h2>کارگاه‌های آموزشی سلامت‌پژوه</h2><p>کارگاه‌های پیشنهادی برای داوطلبان ارشد و دکتری و پژوهشگران حوزه سلامت. سرفصل‌ها و شیوه برگزاری را بررسی کنید و علاقه‌مندی خود را به‌صورت آزمایشی ثبت کنید.</p></div>
+        <div class="workshop-notice"><span class="workshop-notice-icon" aria-hidden="true"><svg class="workshop-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M4 3v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3"/><path d="m8 21 4-4 4 4"/><path d="M8 9h8"/><path d="M8 12h5"/></svg></span><div><strong>تقویم پیش‌فرض کارگاه‌ها هنوز نهایی نشده است.</strong><p>کارگاه‌های پیش‌فرض نمایشی هستند. در پنل آزمایشی می‌توان مدرس، تاریخ، هزینه و ظرفیت تعریف کرد؛ هیچ‌یک رویداد رسمی یا ثبت‌نام واقعی نیست. اعلام علاقه‌مندی فقط در مرورگر ذخیره می‌شود.</p></div></div>
+        <div class="workshop-summary-line"><div><span class="eyebrow">انتخاب آگاهانه</span><h3>کارگاه‌های پیشنهادی</h3></div><div class="workshop-counts"><span class="pill" id="workshop-total-count">۶ کارگاه نمونه</span><span class="pill" id="workshop-interest-count">۰ علاقه‌مندی ثبت‌شده</span></div></div>
+        <div class="toolbar"><label class="input-with-label">جست‌وجو<input id="workshop-search" type="search" placeholder="نام کارگاه یا سرفصل..."></label><label class="input-with-label">حوزه<select id="workshop-category"><option value="all">همه حوزه‌ها</option><option value="آمادگی کنکور">آمادگی کنکور</option><option value="روش تحقیق و آمار">روش تحقیق و آمار</option><option value="اقتصاد و سیاست سلامت">اقتصاد و سیاست سلامت</option></select></label><label class="input-with-label">شیوه پیشنهادی<select id="workshop-mode"><option value="all">همه شیوه‌ها</option><option value="آنلاین">آنلاین</option><option value="حضوری">حضوری</option></select></label></div>
+        <div id="workshop-grid" class="workshop-grid" aria-live="polite"></div>
+        <div class="panel workshop-my-list"><div class="panel-heading"><div><span class="eyebrow">برنامه شخصی</span><h3>کارگاه‌های منتخب من</h3></div><button type="button" class="button secondary small" id="workshop-show-all">مشاهده همه</button></div><div id="workshop-interests" class="workshop-interest-list">هنوز کارگاهی را انتخاب نکرده‌اید.</div></div>
+        <div class="info-strip">پنل آزمایشی مدیریت کارگاه در منو اضافه شده است. تقویم واقعی، تأیید مدرس، مدیریت ظرفیت تراکنشی، پرداخت، ثبت‌نام واقعی، اطلاع‌رسانی و صدور گواهی به سرور و احراز هویت نیاز دارند.</div>
+      </section>
+      <section id="page-workshop-admin" class="page" aria-label="مدیریت کارگاه‌ها - نمونه آزمایشی">
+        <div class="page-intro"><span class="eyebrow">پنل برگزارکننده · نسخه آزمایشی</span><h2>مدیریت کارگاه‌های آموزشی</h2><p>کارگاه جدید بسازید؛ مدرس، زمان، ظرفیت، هزینه و وضعیت گواهی را تعیین کنید؛ اطلاعات را ویرایش و وضعیت نمایش در فهرست کارگاه‌ها را کنترل کنید.</p></div>
+        <div class="workshop-notice admin-warning"><span class="workshop-notice-icon">⚠</span><div><strong>این پنل محافظت‌شده نیست و فقط برای نمایش قابلیت‌هاست.</strong><p>در این نمونه تمام داده‌ها روی همین مرورگر هستند؛ انتشار، ظرفیت، گواهی و لینک کلاس واقعی محسوب نمی‌شوند. اطلاعات حقیقی شرکت‌کنندگان یا لینک خصوصی کلاس را وارد نکنید. در محصول نهایی، ورود مدیر و مجوزها باید سمت سرور بررسی شوند.</p></div></div>
+        <div class="admin-stats"><div class="admin-stat"><small>کل کارگاه‌ها</small><strong id="admin-count-all">۰</strong></div><div class="admin-stat"><small>منتشرشده در نمونه</small><strong id="admin-count-published">۰</strong></div><div class="admin-stat"><small>پیش‌نویس</small><strong id="admin-count-draft">۰</strong></div><div class="admin-stat"><small>بایگانی‌شده</small><strong id="admin-count-archived">۰</strong></div></div>
+        <div class="admin-layout">
+          <div class="panel admin-form-panel"><div class="panel-heading"><div><span class="eyebrow">فرم مدیریت</span><h3 id="admin-form-title">افزودن کارگاه جدید</h3></div><button type="button" id="admin-reset" class="button ghost small">فرم جدید</button></div>
+            <form id="workshop-admin-form" autocomplete="off">
+              <input id="admin-id" type="hidden">
+              <label>عنوان کارگاه <input id="admin-title" maxlength="120" required placeholder="مثلاً کارگاه تحلیل داده با R"></label>
+              <div class="field-row"><label>حوزه <select id="admin-category"><option>آمادگی کنکور</option><option>روش تحقیق و آمار</option><option>اقتصاد و سیاست سلامت</option></select></label><label>شیوه برگزاری <select id="admin-mode"><option>آنلاین</option><option>حضوری</option><option>ترکیبی</option></select></label></div>
+              <div class="field-row"><label>مخاطب هدف <input id="admin-audience" maxlength="100" required placeholder="مثلاً دانشجویان ارشد و دکتری"></label><label>مدت/تعداد جلسه <input id="admin-duration" maxlength="80" required placeholder="مثلاً ۲ جلسه، هر جلسه ۹۰ دقیقه"></label></div>
+              <label>معرفی کوتاه کارگاه <textarea id="admin-intro" maxlength="500" rows="2" required placeholder="هدف و دستاورد یادگیری"></textarea></label>
+              <label>سرفصل‌ها (هر سرفصل یک خط) <textarea id="admin-syllabus" maxlength="1800" rows="4" required placeholder="سرفصل اول&#10;سرفصل دوم&#10;سرفصل سوم"></textarea></label>
+              <div class="field-row"><label>نام مدرس <input id="admin-trainer" maxlength="100" placeholder="نام مدرس / برگزارکننده"></label><label>تاریخ و ساعت محلی جلسه اول <input id="admin-start" type="datetime-local"></label></div>
+              <div class="field-row"><label>منطقه زمانی <select id="admin-timezone"><option value="Asia/Tehran">تهران (Asia/Tehran)</option><option value="Europe/Berlin">برلین (Europe/Berlin)</option><option value="UTC">UTC</option></select></label><label>ظرفیت <input id="admin-capacity" type="number" min="1" step="1" placeholder="مثلاً ۳۰"></label></div>
+              <div class="field-row"><label>هزینه ثبت‌نام <input id="admin-price" type="number" min="0" step="1" placeholder="صفر = رایگان"></label><label>واحد پول <select id="admin-currency"><option value="تومان">تومان</option><option value="ریال">ریال</option><option value="یورو">یورو</option></select></label></div>
+              <label>نشانی کلاس آنلاین یا محل برگزاری <input id="admin-location" maxlength="240" placeholder="لینک https://... یا نام محل برگزاری"></label>
+              <div class="field-row"><label>وضعیت نمایش <select id="admin-status"><option value="draft">پیش‌نویس</option><option value="published">منتشرشده در نمونه</option><option value="archived">بایگانی‌شده</option></select></label><label>گواهی آموزشی <select id="admin-certificate"><option value="none">بدون گواهی</option><option value="planned">برنامه صدور گواهی (نمایشی)</option></select></label></div>
+              <div class="admin-form-actions"><button class="button primary" type="submit" id="admin-save">ذخیره کارگاه</button><button class="button ghost" type="button" id="admin-export">دریافت فهرست JSON</button></div>
+            </form>
+          </div>
+          <div class="panel admin-list-panel"><div class="panel-heading"><div><span class="eyebrow">مدیریت فهرست</span><h3>کارگاه‌های تعریف‌شده</h3></div></div>
+            <div class="admin-filters"><label>جست‌وجو <input type="search" id="admin-search" placeholder="عنوان یا مدرس"></label><label>وضعیت <select id="admin-filter-status"><option value="all">همه</option><option value="draft">پیش‌نویس</option><option value="published">منتشرشده در نمونه</option><option value="archived">بایگانی</option></select></label></div>
+            <div id="admin-workshop-list" class="admin-list" aria-live="polite"></div>
+            <div class="admin-list-footer"><button class="button secondary small" type="button" id="admin-restore-defaults">بازگرداندن شش کارگاه نمونه</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="page-membership" class="page" aria-label="عضویت و پرداخت آزمایشی">
+        <div class="page-intro"><span class="eyebrow">عضویت و خدمات مالی</span><h2>یک‌سال عضویت؛ منابع جدید رایگان؛ تمدید با ۳۰٪ تخفیف</h2><p>برای عضو جدید، تخفیف خوداظهاری ۱۰٪ و برای سایرین تعرفه کامل اعمال می‌شود؛ تمدید پس از یک سال برای همه اعضا با ۳۰٪ تخفیف انجام می‌شود. تخفیف‌ها با هم جمع نمی‌شوند. درگاه واقعی متصل نیست.</p></div>
+        <div class="workshop-notice"><span class="workshop-notice-icon">◈</span><div><strong>هیچ هزینه‌ای برای به‌روزرسانی منابع دریافت نمی‌شود.</strong><p>عضویت تا یک سال اعتبار دارد؛ انتشار منابع جدید قیمت اشتراک شما را تغییر نمی‌دهد. دوره جدید فقط بعد از پایان اعتبار فعلی قابل خرید است. مبالغ فعلی نمونه هستند.</p></div></div>
+        <div class="billing-summary-grid">
+          <div class="billing-stat"><small>آخرین بسته آموزشی نمایشی</small><strong id="bill-current-version">—</strong><span id="bill-resource-count" class="muted"></span></div>
+          <div class="billing-stat"><small>تعرفه مصوب سال جاری</small><strong id="bill-full-price">—</strong><span id="bill-tariff-year" class="muted">تومان · تعرفه فرضی</span></div>
+          <div class="billing-stat"><small>وضعیت عضویت آزمایشی</small><strong id="bill-member-status">عضو جدید</strong><span id="bill-expiry" class="muted">عضویت فعالی وجود ندارد.</span></div>
+        </div>
+        <div class="two-column bill-columns">
+          <div class="panel"><div class="panel-heading"><div><span class="eyebrow">صورت‌حساب</span><h3>مبلغ قابل پرداخت</h3></div><span class="badge">اعتبار یک‌ساله</span></div>
+            <div id="bill-self-declare-block" class="eligibility-box">
+              <label class="checkbox-line eligibility-check" for="bill-self-declared"><input type="checkbox" id="bill-self-declared"><span><strong>عضو جامعه هدف سلامت‌پژوه هستم</strong><small>با خوداظهاری تأیید می‌کنم دانشجوی ارشد یا دکتری، پژوهشگر یا شاغل حوزه سلامت هستم. برای عضویت اولیه ۱۰٪ تخفیف در نظر گرفته می‌شود و نیازی به بارگذاری مدرک نیست.</small></span></label>
+              <p class="muted" id="bill-declaration-hint">تخفیف بر اساس اعلام شخصی شماست. لطفاً گزینه را فقط در صورت صدق این وضعیت انتخاب کنید.</p>
+            </div>
+            <div class="price-display"><strong id="bill-amount">—</strong><span>تومان · مبلغ نمایشی</span></div>
+            <p id="bill-explanation" class="muted"></p>
+            <div id="bill-price-breakdown" class="bill-breakdown"></div>
+            <button id="bill-create-order" class="button primary full" type="button">صدور صورت‌حساب آزمایشی</button>
+            <div id="bill-pending" class="bill-pending" hidden></div>
+            <div class="info-strip">این نمونه پرداخت واقعی انجام نمی‌دهد، اطلاعات کارت دریافت نمی‌کند و عضویت حقیقی ایجاد نمی‌کند. نسخه نهایی باید مبلغ، تخفیف و تاریخ انقضا را در سرور محاسبه و تراکنش را از درگاه رسمی راستی‌آزمایی کند.</div>
+          </div>
+          <div class="panel"><div class="panel-heading"><div><span class="eyebrow">آزمایش قواعد اشتراک</span><h3>سناریوهای عضویت</h3></div></div>
+            <p class="muted">برای دیدن سه وضعیت از داده‌های نمایشی استفاده کنید. در حالت «کاربر جدید»، تیک خوداظهاری را روشن یا خاموش کنید تا دو تعرفه را مقایسه کنید.</p>
+            <div class="scenario-buttons"><button id="bill-seed-new" type="button" class="button ghost">کاربر جدید</button><button id="bill-seed-old" type="button" class="button secondary">عضو فعال</button><button id="bill-seed-expired" type="button" class="button ghost">عضویت منقضی‌شده</button></div>
+            <h3 class="subhead">سابقه پرداخت‌های شبیه‌سازی‌شده</h3><div id="bill-history" class="bill-history"><p class="muted">پرداخت آزمایشی ثبت نشده است.</p></div>
+            <div class="bill-rules"><strong>قاعده تمدید</strong><p>پس از پایان دوره، هزینه تمدید = تعرفه مصوب سال تمدید × ۷۰٪. پرداخت دوره جدید، تاریخ انقضای تازه یک‌ساله ایجاد می‌کند. افزایش تعداد منابع هزینه جداگانه ندارد.</p></div>
+          </div>
+        </div>
+      </section>
+      <section id="page-feedback" class="page" aria-label="نظرات و پیشنهادات کاربران">
+        <div class="page-intro"><span class="eyebrow">صدای کاربران</span><h2>نظرات، انتقادات و پیشنهادهای شما</h2><p>به ما بگویید کدام خدمات، منابع یا کارگاه‌ها باید بهتر شوند. این فرم در نسخه نمایشی به اینترنت ارسال نمی‌شود.</p></div>
+        <div class="two-column form-layout"><div class="panel"><h3>ارسال بازخورد</h3>
+          <form id="feedback-form">
+            <div class="field-row"><label>موضوع نظر<select id="feedback-category" required><option>پیشنهاد منابع جدید</option><option>مشاوره کنکور</option><option>خلاصه‌های آموزشی</option><option>سؤالات و آزمون‌ها</option><option>کارگاه‌های آموزشی</option><option>عضویت و پرداخت</option><option>گزارش ایراد فنی</option><option>سایر موارد</option></select></label><label>امتیاز کلی (اختیاری)<select id="feedback-rating"><option value="">بدون امتیاز</option><option value="5">۵ — عالی</option><option value="4">۴ — خوب</option><option value="3">۳ — متوسط</option><option value="2">۲ — نیازمند بهبود</option><option value="1">۱ — ضعیف</option></select></label></div>
+            <label>متن نظر یا پیشنهاد<textarea id="feedback-message" minlength="10" maxlength="1500" rows="5" required placeholder="تجربه، پیشنهاد یا مشکل خود را با جزئیات بیان کنید..."></textarea></label>
+            <label class="checkbox-line"><input type="checkbox" id="feedback-consent" required> موافقم متن نظر فقط به‌صورت محلی در این مرورگر برای نمایش ذخیره شود.</label>
+            <button class="button primary full" type="submit">ثبت بازخورد آزمایشی</button>
+          </form>
+          <div class="info-strip">برای حفظ حریم خصوصی، نام، شماره تماس، اطلاعات بیماران، شماره کارت یا اطلاعات محرمانه را در فرم وارد نکنید. در نسخه واقعی، دریافت و رسیدگی به بازخورد نیازمند ذخیره‌سازی امن سمت سرور است.</div>
+        </div><div class="panel"><div class="panel-heading"><div><span class="eyebrow">پیگیری محلی</span><h3>نظرات ثبت‌شده من</h3></div><span id="feedback-count" class="pill">۰ مورد</span></div><div id="feedback-list" class="feedback-list"><p class="muted">هنوز نظری ثبت نکرده‌اید.</p></div></div></div>
+      </section>
+      <section id="page-finance-admin" class="page" aria-label="مدیریت تعرفه سالانه و نظرات">
+        <div class="page-intro"><span class="eyebrow">پنل نمایشی مدیر</span><h2>تعرفه سالانه، منابع جدید و بازخورد</h2><p>تعرفه هر سال مستقل از شمار منابع تعریف می‌شود. اضافه‌شدن بسته جدید منابع، هیچ صورتحسابی برای اعضا ایجاد نمی‌کند.</p></div>
+        <div class="workshop-notice admin-warning"><span class="workshop-notice-icon">⚠</span><div><strong>فقط برای نمایش؛ کنترل دسترسی مدیر در این نمونه واقعی نیست.</strong><p>در محصول نهایی، تعرفه‌ها و سوابق پرداخت باید در سرور و با گزارش ممیزی مدیریت شوند.</p></div></div>
+        <div class="two-column admin-layout">
+          <div class="panel"><div class="panel-heading"><div><span class="eyebrow">تعرفه مصوب</span><h3>تعرفه عضویت سالانه</h3></div></div>
+            <div id="finance-tariff-list" class="release-list"></div>
+            <form id="tariff-form"><div class="field-row"><label>سال تعرفه (شمسی)<input id="tariff-year" type="number" min="1400" max="1500" step="1" required></label><label>مبلغ عضویت جدید (تومان)<input id="tariff-price" type="number" min="0" step="1000" required></label></div><button class="button primary full" type="submit">ثبت تعرفه سال جدید (نمونه)</button></form>
+            <div class="info-strip">عضویت اولیه: ۱۰٪ تخفیف خوداظهاری جامعه هدف؛ تمدید همه اعضا: ۳۰٪ تخفیف. تخفیف‌ها تجمیع نمی‌شوند. هیچ مدرک تحصیلی یا شغلی در این نمونه دریافت نمی‌شود.</div>
+          </div>
+          <div class="panel"><div class="panel-heading"><div><span class="eyebrow">به‌روزرسانی رایگان محتوا</span><h3>نسخه‌های منابع اختصاصی</h3></div></div>
+            <div id="finance-release-list" class="release-list"></div>
+            <form id="release-form"><label>عنوان بسته منابع جدید<input id="release-title" maxlength="110" required placeholder="مثلاً مجموعه تست‌های جدید"></label><label>تعداد مدخل‌های جدید<input id="release-items" type="number" min="1" step="1" required></label><label>شرح تغییرات<textarea id="release-notes" maxlength="450" rows="2" placeholder="ویژگی منابع اضافه‌شده"></textarea></label><button class="button secondary full" type="submit">ثبت نسخه جدید؛ رایگان برای اعضا</button></form>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:20px"><div class="panel-heading"><div><span class="eyebrow">صندوق بازخورد</span><h3>مدیریت نظرات و پیشنهادها</h3></div><span id="finance-feedback-total" class="pill">۰ مورد</span></div><div id="finance-feedback-list" class="feedback-list"></div></div>
+      </section>
+
+      <section id="page-support" class="page" aria-label="مرکز پشتیبانی کاربران">
+        <div class="page-intro"><span class="eyebrow">پشتیبانی و حل مسئله</span><h2>مرکز پشتیبانی کاربران</h2><p>برای مشکلات ورود، عضویت، آزمون‌ها، منابع و کارگاه‌ها درخواست ثبت کنید و وضعیت رسیدگی را پیگیری کنید.</p></div>
+        <div class="workshop-notice"><span class="workshop-notice-icon">☏</span><div><strong>ثبت تیکت و پیگیری آزمایشی</strong><p>تیکت‌های این نسخه فقط در همین مرورگر باقی می‌مانند؛ هیچ کارشناسی به‌طور واقعی به آن‌ها پاسخ نمی‌دهد. داده شخصی، شماره کارت یا اطلاعات بیمار وارد نکنید.</p></div></div>
+        <div class="two-column form-layout">
+          <div class="panel"><h3>ثبت درخواست جدید</h3><form id="support-form">
+            <div class="field-row"><label>نوع مشکل<select id="support-category"><option>ورود و حساب کاربری</option><option>عضویت و پرداخت</option><option>منابع و خلاصه‌ها</option><option>آزمون‌ها و تست‌ها</option><option>کارگاه‌ها</option><option>مشکل فنی</option><option>سایر</option></select></label><label>اولویت<select id="support-priority"><option value="normal">معمولی</option><option value="high">بالا</option></select></label></div>
+            <label>عنوان مشکل<input id="support-subject" minlength="5" maxlength="130" required placeholder="مثلاً محتوای یک درس باز نمی‌شود"></label>
+            <label>شرح مسئله<textarea id="support-message" minlength="12" maxlength="2000" rows="5" required placeholder="مراحل ایجاد مشکل و پیام خطا را شرح دهید؛ بدون اطلاعات حساس"></textarea></label>
+            <button class="button primary full" type="submit">ثبت درخواست پشتیبانی</button>
+          </form></div>
+          <div class="panel"><div class="panel-heading"><h3>درخواست‌های من</h3><span id="support-count" class="pill">۰ مورد</span></div><div id="support-list" class="feedback-list"></div></div>
+        </div>
+      </section>
+      <section id="page-support-admin" class="page" aria-label="مدیریت تیکت‌های پشتیبانی">
+        <div class="page-intro"><span class="eyebrow">پنل پشتیبان · نمونه</span><h2>رسیدگی به درخواست‌های کاربران</h2><p>تغییر وضعیت تیکت و ارسال پاسخ نمایشی برای بررسی گردش کار.</p></div>
+        <div class="workshop-notice admin-warning"><span class="workshop-notice-icon">⚠</span><div><strong>بدون نقش واقعی یا پاسخ زنده</strong><p>این صفحه در نسخه محلی برای نمایش باز است. در سامانه عملیاتی فقط کارشناسان مجاز می‌توانند تیکت‌ها را ببینند و پاسخ دهند.</p></div></div>
+        <div id="support-admin-list" class="feedback-list"></div>
+      </section>
+      <section id="page-works" class="page" aria-label="اشتراک آثار علمی">
+        <div class="page-intro"><span class="eyebrow">همکاری و نشر علمی</span><h2>اشتراک‌گذاری آثار علمی کاربران</h2><p>اگر مایلید مقاله، پوستر، گزارش، پایان‌نامه یا اثر علمی دیگری را معرفی کنید، آن را برای بررسی ارسال کنید.</p></div>
+        <div class="workshop-notice"><span class="workshop-notice-icon">✎</span><div><strong>انتشار منوط به بررسی علمی و حق نشر</strong><p>فقط آثار خود یا آثاری که اجازه قانونی اشتراک آن‌ها را دارید معرفی کنید. ارسال، به معنی انتشار قطعی نیست. در نمونه فعلی هیچ اثری واقعاً روی اینترنت منتشر نمی‌شود.</p></div></div>
+        <div class="two-column form-layout">
+          <div class="panel"><h3>معرفی اثر علمی جدید</h3><form id="work-form">
+            <label>عنوان اثر<input id="work-title" minlength="5" maxlength="180" required placeholder="عنوان مقاله، گزارش، کتابچه یا پوستر"></label>
+            <div class="field-row"><label>نوع اثر<select id="work-type"><option>مقاله علمی</option><option>پایان‌نامه / رساله</option><option>پوستر علمی</option><option>گزارش پژوهشی</option><option>کتابچه آموزشی</option><option>سایر</option></select></label><label>حوزه تخصصی<select id="work-topic"><option>مدیریت خدمات سلامت</option><option>اقتصاد سلامت</option><option>سیاست‌گذاری سلامت</option><option>روش تحقیق</option><option>اپیدمیولوژی</option><option>سایر</option></select></label></div>
+            <label>نام نویسنده یا گروه پژوهشی<input id="work-authors" maxlength="200" required placeholder="نویسندگان اثر"></label>
+            <label>خلاصه یا چکیده کوتاه<textarea id="work-abstract" minlength="30" maxlength="2000" rows="5" required placeholder="موضوع، روش و نتیجه اصلی اثر را به اختصار بیان کنید"></textarea></label>
+            <label>نشانی معتبر اثر یا DOI (اختیاری)<input id="work-url" maxlength="320" placeholder="https://... یا https://doi.org/..."></label>
+            <label>نحوه اشتراک<select id="work-license"><option value="link_only">معرفی اثر و لینک مجاز؛ بدون انتشار متن کامل</option><option value="cc_by">متن قابل اشتراک با مجوز CC BY</option><option value="permission">انتشار با اجازه صریح صاحب حقوق</option></select></label>
+            <label class="checkbox-line"><input type="checkbox" id="work-rights" required> تأیید می‌کنم مالک حقوق انتشار هستم یا اجازه معتبر دارم و اثر شامل اطلاعات محرمانه بیماران نیست.</label>
+            <button class="button primary full" type="submit">ارسال اثر برای بررسی</button>
+          </form></div>
+          <div class="panel"><div class="panel-heading"><h3>گالری آثار نمونه</h3><span id="works-count" class="pill">۰ اثر</span></div><label>جست‌وجو در آثار<input id="works-search" type="search" placeholder="عنوان یا نویسنده"></label><div id="works-public-list" class="feedback-list" style="margin-top:12px"></div><h3 class="subhead">آثار ارسالی من</h3><div id="works-own-list" class="feedback-list"></div></div>
+        </div>
+      </section>
+      <section id="page-works-admin" class="page" aria-label="بررسی آثار علمی ارسالی">
+        <div class="page-intro"><span class="eyebrow">پنل بررسی محتوا · نمونه</span><h2>بررسی و انتشار آثار علمی</h2><p>تأیید یا رد آثار علمی پیش از دیده‌شدن در گالری نمونه.</p></div>
+        <div class="workshop-notice admin-warning"><span class="workshop-notice-icon">⚠</span><div><strong>تأیید آزمایشی به معنی اعتبارسنجی علمی یا اخذ مجوز حقوقی نیست.</strong><p>در محصول واقعی باید هویت صاحب اثر، حقوق نشر، ادعاها، محرمانگی داده و مالکیت معنوی کنترل شود.</p></div></div>
+        <div id="works-admin-list" class="feedback-list"></div>
+      </section>
+      <footer class="footer">سلامت‌پژوه · نمونه وب‌اپ نسخه ۰٫۹ · برای نصب، روی HTTPS میزبانی شود</footer>
+    </main>
+  </div>
+  <script>
+/* سلامت‌پژوه ۰.۹ — نمونه وب‌اپ قابل نصب پس از میزبانی HTTPS؛ داده‌ها و پرداخت‌ها نمایشی هستند. */
+(() => {
+'use strict';
+const KEY = 'healthpajooh_exam_mvp_v03';
+const el = id => document.getElementById(id);
+const fa = value => Number(value).toLocaleString('fa-IR');
+const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const safeUrl = value => { try { const url = new URL(value); return ['https:', 'http:'].includes(url.protocol) ? url.href : ''; } catch { return ''; } };
+const workshopIconSvg = '<svg class="workshop-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M4 3v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3"/><path d="m8 21 4-4 4 4"/><path d="M8 9h8"/><path d="M8 12h5"/></svg>';
+const subjectPlans = {
+ 'مدیریت خدمات سلامت':['مدیریت خدمات سلامت','روش تحقیق','آمار زیستی','سیاست‌گذاری سلامت','اقتصاد سلامت','روش تحقیق'],
+ 'اقتصاد سلامت':['اقتصاد سلامت','آمار زیستی','روش تحقیق','اقتصاد سلامت','سیاست‌گذاری سلامت','آمار زیستی'],
+ 'اپیدمیولوژی':['اپیدمیولوژی','آمار زیستی','روش تحقیق','اپیدمیولوژی','آمار زیستی','روش تحقیق'],
+ 'سایر رشته‌ها':['روش تحقیق','آمار زیستی','اپیدمیولوژی','سیاست‌گذاری سلامت','اقتصاد سلامت','روش تحقیق']
+};
+const resources = [
+ {id:'r1',title:'روش تحقیق و طراحی مطالعه',subject:'روش تحقیق',level:'هر دو',description:'مرور طراحی مطالعات، سؤال پژوهش، نمونه‌گیری و اعتبار نتایج.',ref:'بسته موضوعی تألیفی ـ نمونه'},
+ {id:'r2',title:'مبانی آمار زیستی',subject:'آمار زیستی',level:'هر دو',description:'احتمال، آزمون فرض، برآورد، فاصله اطمینان و تفسیر مقدار p.',ref:'بسته موضوعی تألیفی ـ نمونه'},
+ {id:'r3',title:'اپیدمیولوژی کاربردی',subject:'اپیدمیولوژی',level:'هر دو',description:'بروز، شیوع، سوگیری، مخدوش‌گری و سنجه‌های ارتباط.',ref:'بسته موضوعی تألیفی ـ نمونه'},
+ {id:'r4',title:'اصول اقتصاد سلامت',subject:'اقتصاد سلامت',level:'هر دو',description:'هزینه فرصت، ارزیابی اقتصادی، ICER و ارزیابی اثر بودجه‌ای.',ref:'بسته موضوعی تألیفی ـ نمونه'},
+ {id:'r5',title:'تحلیل سیاست سلامت',subject:'سیاست‌گذاری سلامت',level:'دکتری',description:'صورت‌بندی مسئله، گزینه‌های سیاستی و معیارهای ارزیابی.',ref:'بسته موضوعی تألیفی ـ نمونه'},
+ {id:'r6',title:'مبانی مدیریت خدمات سلامت',subject:'مدیریت خدمات سلامت',level:'ارشد',description:'شاخص‌های عملکرد، ساختار نظام ارائه خدمت و کیفیت خدمات.',ref:'بسته موضوعی تألیفی ـ نمونه'},
+ {id:'r7',title:'خواندن نقادانه مقالات',subject:'روش تحقیق',level:'دکتری',description:'اعتبار درونی، تعمیم‌پذیری، اندازه اثر و محدودیت مطالعه.',ref:'بسته موضوعی تألیفی ـ نمونه'},
+ {id:'r8',title:'غربالگری و آزمون‌های تشخیصی',subject:'اپیدمیولوژی',level:'ارشد',description:'حساسیت، ویژگی و ارزش‌های اخباری و تأثیر شیوع.',ref:'بسته موضوعی تألیفی ـ نمونه'}
+];
+const summaries = [
+ {id:'s1',title:'حساسیت و ویژگی آزمون تشخیصی',subject:'اپیدمیولوژی',source:'محتوای آموزشی تألیفی ـ مرتبط با بسته r8',text:'حساسیت = تعداد مثبت واقعی ÷ کل افراد بیمار.\nویژگی = تعداد منفی واقعی ÷ کل افراد سالم.\nارزش اخباری مثبت، برخلاف حساسیت و ویژگی، به شیوع بیماری در جمعیت نیز وابسته است.'},
+ {id:'s2',title:'تفسیر فاصله اطمینان',subject:'آمار زیستی',source:'محتوای آموزشی تألیفی ـ مرتبط با بسته r2',text:'در تفسیر فراوانی‌گرا، اگر روش نمونه‌گیری و ساخت فاصله بارها تکرار شود، ۹۵٪ فاصله‌های ساخته‌شده پارامتر واقعی را در بر می‌گیرند.\nفاصله اطمینان ۹۵٪ به معنی احتمال ۹۵٪ برای قرار داشتن یک پارامتر ثابت در بازه مشاهده‌شده نیست.'},
+ {id:'s3',title:'شاخص هزینه‌اثربخشی افزایشی',subject:'اقتصاد سلامت',source:'محتوای آموزشی تألیفی ـ مرتبط با بسته r4',text:'ICER = (هزینه مداخله جدید − هزینه مقایسه‌گر) ÷ (اثربخشی جدید − اثربخشی مقایسه‌گر).\nواحد نتیجه، هزینه به ازای یک واحد پیامد افزایشی است.\nوقتی گزینه جدید هم کم‌هزینه‌تر و هم اثربخش‌تر باشد، «غالب» است و تفسیر نسبت ساده کافی نیست.'},
+ {id:'s4',title:'نقش تصادفی‌سازی در کارآزمایی',subject:'روش تحقیق',source:'محتوای آموزشی تألیفی ـ مرتبط با بسته r1',text:'تخصیص تصادفی به‌طور متوسط موجب تعادل عوامل مخدوش‌کننده شناخته‌شده و ناشناخته میان گروه‌ها می‌شود.\nپنهان‌سازی تخصیص با کورسازی یکسان نیست؛ اولی از پیش‌بینی گروه بعدی جلوگیری می‌کند.'},
+ {id:'s5',title:'ساختار خلاصه سیاستی',subject:'سیاست‌گذاری سلامت',source:'محتوای آموزشی تألیفی ـ مرتبط با بسته r5',text:'خلاصه سیاستی باید مسئله، جمعیت هدف، شواهد، گزینه‌ها، پیامدهای اجرا و محدودیت‌های اطلاعات را شفاف بیان کند.\nانتخاب سیاست صرفاً با یک امتیاز نهایی تعیین نمی‌شود؛ عدالت، امکان‌پذیری و ذی‌نفعان نیز مهم‌اند.'},
+ {id:'s6',title:'تفاوت بروز و شیوع',subject:'اپیدمیولوژی',source:'محتوای آموزشی تألیفی ـ مرتبط با بسته r3',text:'بروز به رخداد موارد جدید بیماری در یک جمعیت در معرض خطر و یک دوره مشخص مربوط است.\nشیوع نسبت همه موارد موجود در یک زمان یا دوره مشخص را نشان می‌دهد.\nشیوع به بروز و مدت بیماری وابسته است.'}
+];
+/* تمامی سؤال‌ها برای نمایش قابلیت نوشته شده‌اند، نه از دفترچه‌های کنکور. */
+const questions = [
+ ['اپیدمیولوژی','کدام شاخص، تعداد موارد جدید بیماری را در یک دوره مشخص نشان می‌دهد؟',['شیوع نقطه‌ای','بروز','ارزش اخباری مثبت','نسبت شانس'],1,'بروز به موارد جدید در جمعیت در معرض خطر طی زمان معین اشاره دارد.'],
+ ['اپیدمیولوژی','در مطالعه مورد-شاهدی، سنجه ارتباط متداول کدام است؟',['خطر مطلق','نرخ بروز','نسبت شانس (OR)','میانه بقا'],2,'در مطالعه مورد-شاهدی معمولاً نسبت شانس به‌عنوان سنجه ارتباط برآورد می‌شود.'],
+ ['اپیدمیولوژی','اگر حساسیت آزمونی ۸۰٪ باشد، تفسیر درست کدام است؟',['۸۰٪ افراد بیمار نتیجه مثبت دارند','۸۰٪ مثبت‌ها بیمار هستند','۸۰٪ افراد سالم نتیجه منفی دارند','شیوع بیماری ۸۰٪ است'],0,'حساسیت برابر با احتمال نتیجه مثبت در میان افراد واقعاً بیمار است.'],
+ ['اپیدمیولوژی','تغییر شیوع بیماری معمولاً مستقیماً کدام شاخص را تغییر می‌دهد؟',['حساسیت','ویژگی','ارزش اخباری مثبت','نسبت درست‌نمایی مثبت'],2,'ارزش اخباری مثبت به شیوع بیماری در جمعیت وابسته است.'],
+ ['اپیدمیولوژی','مخدوش‌گری در پژوهش مشاهده‌ای به چه معناست؟',['خطای تایپی در داده','اثر متغیر مرتبط با مواجهه و پیامد بر رابطه مشاهده‌شده','کاهش حجم نمونه','صرفاً گم‌شدن پاسخ‌ها'],1,'متغیر مخدوش‌کننده می‌تواند رابطه مواجهه و پیامد را تحریف کند.'],
+ ['آمار زیستی','خطای نوع اول در آزمون فرض چیست؟',['رد فرض صفر وقتی درست است','پذیرش فرض صفر وقتی نادرست است','کوچک شدن انحراف معیار','افزایش حجم نمونه'],0,'خطای نوع اول رد نادرست فرض صفر است.'],
+ ['آمار زیستی','مقدار p به‌درستی چه چیزی را بیان می‌کند؟',['احتمال درست بودن فرض صفر','احتمال تصادفی بودن مطالعه','احتمال مشاهده داده‌ای به این حد افراطی یا بیشتر با فرض صفر','احتمال بالینی مهم بودن اثر'],2,'مقدار p با فرض صحت فرض صفر و مدل آزمون تعریف می‌شود.'],
+ ['آمار زیستی','کدام شاخص برای توصیف پراکندگی داده‌های کمی به‌کار می‌رود؟',['میانگین','میانه','انحراف معیار','نما'],2,'انحراف معیار میزان پراکندگی مقادیر پیرامون میانگین را نشان می‌دهد.'],
+ ['آمار زیستی','با افزایش حجم نمونه و ثابت‌ماندن سایر شرایط، خطای معیار میانگین چه می‌شود؟',['معمولاً کاهش می‌یابد','همیشه دو برابر می‌شود','به صفر دقیقاً می‌رسد','همیشه افزایش می‌یابد'],0,'خطای معیار میانگین با ریشه دوم حجم نمونه نسبت عکس دارد.'],
+ ['آمار زیستی','در توزیع بسیار چوله، کدام شاخص مرکز معمولاً مقاوم‌تر است؟',['میانگین','میانه','واریانس','دامنه'],1,'میانه در برابر مقادیر دورافتاده مقاوم‌تر از میانگین است.'],
+ ['روش تحقیق','مولفه I در چارچوب PICO معمولاً به چه اشاره می‌کند؟',['مداخله یا مواجهه','پیامد','گروه مقایسه','جمعیت'],0,'I در PICO معمولاً Intervention به معنی مداخله است.'],
+ ['روش تحقیق','هدف اصلی تصادفی‌سازی در کارآزمایی چیست؟',['حذف تمام ریزش‌ها','کاهش مخدوش‌گری از طریق تعادل احتمالی گروه‌ها','افزایش دقت ابزار','حذف ضرورت رضایت آگاهانه'],1,'تخصیص تصادفی به تعادل احتمالی عوامل مخدوش‌کننده کمک می‌کند.'],
+ ['روش تحقیق','برای مرور نظام‌مند، کدام اقدام ضروری‌تر است؟',['انتخاب مقالات فقط با عنوان جذاب','تعریف راهبرد جست‌وجو و معیارهای ورود پیش از غربال','حذف مطالعات مخالف','اعلام نتیجه قبل از جست‌وجو'],1,'فرایند مرور نظام‌مند باید نظام‌مند، بازتولیدپذیر و دارای معیارهای مشخص باشد.'],
+ ['روش تحقیق','کدام مطالعه غالباً از مواجهه شروع و پیامد را پیگیری می‌کند؟',['مورد-شاهدی','مقطعی','کوهورت','گزارش مورد'],2,'در مطالعه کوهورت، گروه‌ها بر مبنای مواجهه تعریف و پیامد بررسی می‌شود.'],
+ ['روش تحقیق','کدام عبارت درباره اعتبار بیرونی درست است؟',['به قابلیت تعمیم یافته‌ها مربوط است','فقط به آزمون آماری مربوط است','معادل تصادفی‌سازی است','همیشه با افزایش p بیشتر می‌شود'],0,'اعتبار بیرونی به کاربردپذیری یافته‌ها در جمعیت‌ها و شرایط دیگر مربوط است.'],
+ ['اقتصاد سلامت','فرمول درست ICER کدام است؟',['اختلاف هزینه ÷ اختلاف اثربخشی','مجموع هزینه ÷ مجموع اثربخشی','اختلاف اثربخشی ÷ مجموع هزینه','میانگین هزینه × میانگین اثربخشی'],0,'ICER هزینه افزایشی را بر پیامد افزایشی تقسیم می‌کند.'],
+ ['اقتصاد سلامت','گزینه‌ای که ارزان‌تر و اثربخش‌تر از مقایسه‌گر است، چه وضعیتی دارد؟',['مغلوب','غالب','نامعین','با هزینه برابر'],1,'گزینه غالب هم کم‌هزینه‌تر و هم اثربخش‌تر است.'],
+ ['اقتصاد سلامت','هدف تنزیل در ارزیابی اقتصادی بلندمدت چیست؟',['حذف مخدوش‌گری','تبدیل هزینه‌ها و پیامدهای آینده به ارزش فعلی','افزایش حجم نمونه','کاهش شیوع'],1,'تنزیل ارزش زمانی هزینه‌ها و پیامدهای آینده را لحاظ می‌کند.'],
+ ['اقتصاد سلامت','هزینه مداخله جدید ۱۴۰ و مقایسه‌گر ۱۰۰؛ پیامدها به‌ترتیب ۸ و ۶ است. ICER چقدر است؟',['۱۰','۲۰','۴۰','۸۰'],1,'(۱۴۰ − ۱۰۰) ÷ (۸ − ۶) = ۲۰ واحد هزینه به ازای هر واحد پیامد.'],
+ ['اقتصاد سلامت','تحلیل اثر بودجه‌ای بیشتر به کدام پرسش پاسخ می‌دهد؟',['آیا اجرا با بودجه موجود قابل تأمین است؟','آیا رابطه علی برقرار است؟','آیا تصادفی‌سازی درست بوده است؟','آیا آزمون حساس است؟'],0,'تحلیل اثر بودجه‌ای پیامد مالی پذیرش مداخله برای بودجه‌گذار را بررسی می‌کند.'],
+ ['سیاست‌گذاری سلامت','مخاطب اصلی یک خلاصه سیاستی معمولاً چه کسی است؟',['صرفاً داور مجله','تصمیم‌گیر و سیاست‌گذار','فقط شرکت‌کننده مطالعه','تنها تحلیل‌گر آماری'],1,'خلاصه سیاستی شواهد قابل استفاده برای تصمیم‌گیر را فشرده ارائه می‌کند.'],
+ ['سیاست‌گذاری سلامت','در ارزیابی گزینه‌های سیاستی کدام معیار به توزیع منافع بین گروه‌ها مربوط است؟',['عدالت','حجم نمونه','پایایی ابزار','خطای معیار'],0,'عدالت به چگونگی توزیع منافع و بارها میان گروه‌های مختلف مربوط است.'],
+ ['سیاست‌گذاری سلامت','پیش از انتخاب گزینه سیاستی، کدام اقدام منطقی‌تر است؟',['تعریف روشن مسئله و ذی‌نفعان','حذف شواهد ناموافق','تعیین نتیجه از پیش','انتخاب صرفاً کم‌هزینه‌ترین گزینه'],0,'تعریف مسئله و گروه‌های اثرپذیر پیش‌شرط ارزیابی منسجم گزینه‌هاست.'],
+ ['سیاست‌گذاری سلامت','کدام ویژگی برای شاخص پایش سیاست مناسب‌تر است؟',['نامشخص بودن تعریف','قابل اندازه‌گیری بودن','تغییر مستمر روش محاسبه','فاقد دوره زمانی بودن'],1,'شاخص پایش باید تعریف، واحد و روش سنجش روشن داشته باشد.'],
+ ['سیاست‌گذاری سلامت','چرا یک امتیاز چندمعیاره به‌تنهایی برای انتخاب سیاست کافی نیست؟',['زیرا وزن‌ها و فرض‌ها می‌توانند بر نتیجه اثر بگذارند','چون همه معیارها باید حذف شوند','چون شواهد هیچ نقشی ندارند','زیرا هزینه همیشه صفر است'],0,'نتیجه ارزیابی به وزن‌ها، مقیاس‌ها، کیفیت شواهد و زمینه اجرا وابسته است.']
+].map((q,index)=>({id:`q${index+1}`,topic:q[0],question:q[1],choices:q[2],answer:q[3],explanation:q[4]}));
+
+/* کارگاه‌های زیر پیشنهادی/نمایشی هستند؛ هیچ‌کدام رویداد زمان‌بندی‌شده واقعی نیستند. */
+const defaultWorkshops = [
+ {id:'w1',title:'برنامه‌ریزی هدفمند برای کنکور ارشد و دکتری',category:'آمادگی کنکور',mode:'آنلاین',audience:'ارشد و دکتری',duration:'۲ جلسه پیشنهادی',intro:'ساخت برنامه واقع‌بینانه، زمان‌بندی مرور و مدیریت نقاط ضعف.',syllabus:['بررسی سطح و هدف داوطلب','تقسیم زمان بین مطالعه، مرور و تست','بازبینی برنامه بر اساس عملکرد']},
+ {id:'w2',title:'تکنیک تست‌زنی و تحلیل آزمون',category:'آمادگی کنکور',mode:'آنلاین',audience:'ارشد و دکتری',duration:'۱ جلسه پیشنهادی',intro:'روش خواندن سؤال، مدیریت زمان و استفاده از تحلیل خطا برای بهبود مطالعه.',syllabus:['طبقه‌بندی اشتباهات رایج','روش مدیریت زمان آزمون','ساخت دفترچه تحلیل پاسخ']},
+ {id:'w3',title:'روش تحقیق و طراحی پروپوزال',category:'روش تحقیق و آمار',mode:'آنلاین',audience:'ارشد و دکتری',duration:'۳ جلسه پیشنهادی',intro:'تبدیل مسئله به سؤال پژوهش و انتخاب طرح مطالعه متناسب.',syllabus:['سؤال پژوهش و اهداف','انتخاب طرح و نمونه','ملاحظات روش‌شناختی و اخلاقی']},
+ {id:'w4',title:'آمار زیستی و تفسیر نتایج',category:'روش تحقیق و آمار',mode:'حضوری',audience:'ارشد و دکتری',duration:'۳ جلسه پیشنهادی',intro:'مرور مفاهیم آمار کاربردی و تفسیر نتیجه در مقالات سلامت.',syllabus:['آمار توصیفی و فاصله اطمینان','آزمون فرض و اندازه اثر','خواندن جدول‌ها و گزارش‌ نتایج']},
+ {id:'w5',title:'ارزیابی اقتصادی و تحلیل ICER',category:'اقتصاد و سیاست سلامت',mode:'آنلاین',audience:'دانشجویان و پژوهشگران',duration:'۲ جلسه پیشنهادی',intro:'آشنایی با هزینه، پیامد، مقایسه مداخله‌ها و محدودیت تحلیل اقتصادی.',syllabus:['مبانی ارزیابی اقتصادی','محاسبه و تفسیر ICER','عدم قطعیت و تحلیل حساسیت']},
+ {id:'w6',title:'تحلیل سیاست و نگارش خلاصه سیاستی',category:'اقتصاد و سیاست سلامت',mode:'آنلاین',audience:'دانشجویان و مدیران سلامت',duration:'۲ جلسه پیشنهادی',intro:'تبدیل شواهد به گزینه‌های سیاستی و نوشتن Policy Brief قابل ارزیابی.',syllabus:['صورت‌بندی مسئله و شواهد','گزینه‌های سیاستی و ذی‌نفعان','ساختار خلاصه سیاستی']}
+];
+
+const defaults = {plan:null,completed:[],myResources:[],mySummaries:[],attempts:[],workshopInterests:[],workshopCatalog:null};
+let state = structuredClone(defaults);
+try { const saved=JSON.parse(localStorage.getItem(KEY)||'{}'); if(saved && typeof saved==='object') state={...state,...saved}; } catch(_e) { /* broken cache ignored */ }
+for(const key of ['completed','myResources','mySummaries','attempts','workshopInterests']) if(!Array.isArray(state[key])) state[key]=[];
+if(state.plan && typeof state.plan !== 'object') state.plan=null;
+// کاتالوگ قابل ویرایش آزمایشی. داده‌های ذخیره‌شده نسخه ۰٫۴ حفظ می‌شوند.
+const draftDefaults=defaultWorkshops.map(w=>({...w,status:'draft',trainer:'',startsAt:'',timezone:'Asia/Tehran',capacity:null,price:null,currency:'تومان',location:'',certificate:'none'}));
+let workshops=Array.isArray(state.workshopCatalog)?state.workshopCatalog.filter(w=>w&&typeof w==='object'&&typeof w.id==='string'&&typeof w.title==='string'&&Array.isArray(w.syllabus)):draftDefaults;
+function persistCatalog(){state.workshopCatalog=workshops;save();renderWorkshops();renderAdminWorkshops();refreshDashboard();}
+const validCategories=['آمادگی کنکور','روش تحقیق و آمار','اقتصاد و سیاست سلامت'];
+const statusText={draft:'پیش‌نویس',published:'منتشرشده در نمونه',archived:'بایگانی‌شده'};
+const publicWorkshops=()=>workshops.filter(w=>w.status!=='archived');
+
+let quiz=null, quizTimer=null;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(_e){notify('ذخیره محلی ممکن نیست؛ فضای مرورگر را بررسی کنید.',true);}}
+function notify(message,error=false){const node=el('live-notice');node.textContent=message;node.className=`notice${error?' error':''}`;node.hidden=false;window.clearTimeout(notify.timer);notify.timer=window.setTimeout(()=>node.hidden=true,5200);}
+const pages={dashboard:'مسیر شما تا روز آزمون',coaching:'برنامه مطالعاتی اختصاصی',resources:'کتابخانه منابع اختصاصی',summaries:'خلاصه‌های مطالعه',quizzes:'آزمون و سنجش آمادگی',workshops:'کارگاه‌های آموزشی','workshop-admin':'مدیریت کارگاه‌ها · آزمایشی',membership:'عضویت سالانه و تخفیف خوداظهاری',feedback:'نظرات و پیشنهادهای کاربران','finance-admin':'مدیریت تعرفه سالانه · آزمایشی',support:'پشتیبانی کاربران','support-admin':'رسیدگی به تیکت‌ها · آزمایشی',works:'اشتراک آثار علمی','works-admin':'بررسی آثار علمی · آزمایشی'};
+function navigate(page){if(!pages[page])return;document.querySelectorAll('.page').forEach(node=>node.classList.toggle('active',node.id===`page-${page}`));document.querySelectorAll('.nav-button').forEach(node=>{const active=node.dataset.page===page;node.classList.toggle('active',active);node.setAttribute('aria-current',active?'page':'false');});el('page-title').textContent=pages[page];window.scrollTo({top:0,behavior:'smooth'});}
+document.addEventListener('click', event=>{const target=event.target.closest('[data-goto]');if(target)navigate(target.dataset.goto);});
+document.querySelectorAll('.nav-button').forEach(button=>button.addEventListener('click',()=>navigate(button.dataset.page)));
+function refreshDashboard(){const last=state.attempts.length?state.attempts.reduce((acc,item)=>acc+item.correct/item.total,0)/state.attempts.length:null;el('stat-hours').textContent=state.plan?`${fa(state.plan.hours)} ساعت`:'—';el('stat-resources').textContent=fa(resources.length+state.myResources.length);el('stat-summaries').textContent=fa(summaries.length+state.mySummaries.length);el('stat-accuracy').textContent=last===null?'—':`${fa(Math.round(last*100))}٪`;el('stat-workshops').textContent=fa(state.workshopInterests.filter(id=>publicWorkshops().some(w=>w.id===id)).length);el('dashboard-profile').innerHTML=state.plan?`<strong>آزمون ${escapeHtml(state.plan.level)} · ${escapeHtml(state.plan.field)}</strong><span>سطح فعلی: ${escapeHtml(state.plan.readiness)} · ${fa(state.plan.hours)} ساعت در هفته${state.plan.date?` · تاریخ هدف: ${escapeHtml(state.plan.date)}`:''}</span>`:'هنوز برنامه مطالعاتی ایجاد نشده است.';const total=state.plan?6:0;const done=state.completed.filter(value=>Number.isInteger(value)&&value>=0&&value<6).length;el('dashboard-progress-text').textContent=`${fa(done)} از ${fa(total)}`;el('dashboard-progress-bar').style.width=total?`${Math.round(done/total*100)}%`:'0%';el('dashboard-recent').textContent=state.attempts.length?`آخرین آزمون: ${fa(state.attempts.at(-1).correct)} پاسخ درست از ${fa(state.attempts.at(-1).total)} سؤال (${fa(Math.round(state.attempts.at(-1).correct/state.attempts.at(-1).total*100))}٪).`:'هنوز آزمونی ثبت نشده است. می‌توانید با یک آزمون پنج‌سؤالی شروع کنید.';}
+function planHtml(){const plan=state.plan;if(!plan){el('plan-level-pill').textContent='هنوز ایجاد نشده';el('plan-output').className='empty-state';el('plan-output').innerHTML='<span class="empty-symbol">◇</span><p>با تکمیل فرم، تقسیم زمان و چک‌لیست هفتگی شما در همین‌جا نمایش داده می‌شود.</p>';return;}const subjects=subjectPlans[plan.field]||subjectPlans['سایر رشته‌ها'];const dayNames=['شنبه','یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه'];const minutes=Math.round(plan.hours*60/6);const study=Math.round(minutes*.6),test=Math.round(minutes*.25),review=minutes-study-test;el('plan-level-pill').textContent=`${plan.level} · ${plan.field}`;el('plan-output').className='';el('plan-output').innerHTML=`<div class="plan-lead">${fa(plan.hours)} ساعت در هفته، در ۶ روز. برای هر روز حدود ${fa(study)} دقیقه مطالعه، ${fa(test)} دقیقه تست و ${fa(review)} دقیقه مرور پیش‌بینی شده است. جمعه برای استراحت یا جبران عقب‌ماندگی آزاد است.</div><div class="plan-days">${subjects.map((subject,i)=>`<div class="plan-day ${state.completed.includes(i)?'done':''}"><input type="checkbox" id="day-${i}" data-complete-day="${i}" ${state.completed.includes(i)?'checked':''}><label for="day-${i}"><strong>${dayNames[i]} · ${escapeHtml(subject)}</strong><small>${fa(minutes)} دقیقه · مطالعه، تست و مرور</small></label></div>`).join('')}</div>${plan.weakness?`<p class="field-help" style="margin-top:14px">اولویت ثبت‌شده: ${escapeHtml(plan.weakness)}</p>`:''}`;}
+function populateForm(){if(!state.plan)return;const p=state.plan;el('exam-level').value=p.level;el('exam-field').value=p.field;el('weekly-hours').value=p.hours;el('current-level').value=p.readiness;el('exam-date').value=p.date||'';el('weakness').value=p.weakness||'';}
+el('plan-form').addEventListener('submit',event=>{event.preventDefault();const hours=Number(el('weekly-hours').value),date=el('exam-date').value;if(!Number.isInteger(hours)||hours<4||hours>70){notify('ساعت مطالعه باید عدد صحیح بین ۴ و ۷۰ باشد.',true);return;}const now=new Date(); const today=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');if(date && date<today){notify('تاریخ آزمون نمی‌تواند در گذشته باشد.',true);return;}state.plan={level:el('exam-level').value,field:el('exam-field').value,hours,readiness:el('current-level').value,date,weakness:el('weakness').value.trim()};state.completed=[];save();planHtml();refreshDashboard();notify('برنامه هفتگی ثبت شد. روزهای انجام‌شده را علامت بزنید.');});
+el('plan-output').addEventListener('change',event=>{if(!event.target.matches('[data-complete-day]'))return;const day=Number(event.target.dataset.completeDay);state.completed=state.completed.filter(i=>i!==day);if(event.target.checked)state.completed.push(day);save();planHtml();refreshDashboard();});
+function addSubjectOption(id,topic){if(!Array.from(el(id).options).some(option=>option.value===topic))el(id).add(new Option(topic,topic));}
+function populateSubjects(){const subjects=Array.from(new Set(resources.concat(state.myResources).map(r=>r.subject).concat(summaries.concat(state.mySummaries).map(s=>s.subject),questions.map(q=>q.topic))));for(const [select,items] of [['resource-subject',subjects],['summary-subject',subjects],['quiz-topic',Array.from(new Set(questions.map(q=>q.topic)))]]){const node=el(select);items.sort((a,b)=>a.localeCompare(b,'fa')).forEach(topic=>node.add(new Option(topic,topic)));}}
+function renderResources(){const list=resources.concat(state.myResources),search=el('resource-search').value.trim().toLowerCase(),subject=el('resource-subject').value,level=el('resource-level').value;const filtered=list.filter(item=>(subject==='all'||item.subject===subject)&&(level==='all'||item.level===level||item.level==='هر دو'&&['ارشد','دکتری'].includes(level))&&`${item.title} ${item.subject} ${item.description||''}`.toLowerCase().includes(search));el('resource-grid').innerHTML=filtered.length?filtered.map(item=>`<article class="resource-card"><div class="badge-row"><span class="badge">${escapeHtml(item.subject)}</span><span class="badge outline">${escapeHtml(item.level)}</span></div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description||'منبع ثبت‌شده توسط کاربر')}</p><div class="card-foot"><small>${escapeHtml(item.ref)}</small>${item.url?`<a href="${escapeHtml(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer" class="card-link">بازکردن لینک ↗</a>`:`<button type="button" class="card-link" data-resource-summary="${escapeHtml(item.id)}">خلاصه مرتبط ←</button>`}</div></article>`).join(''):'<div class="empty-grid">منبعی با این شرایط پیدا نشد.</div>';}
+['resource-search','resource-subject','resource-level'].forEach(id=>el(id).addEventListener(id==='resource-search'?'input':'change',renderResources));
+el('resource-form').addEventListener('submit',event=>{event.preventDefault();const url=el('new-resource-url').value.trim();if(url&&!safeUrl(url)){notify('نشانی منبع باید با http یا https شروع شود.',true);return;}state.myResources.push({id:`custom-${Date.now()}`,title:el('new-resource-title').value.trim(),subject:el('new-resource-subject').value.trim(),level:el('new-resource-level').value,description:'منبع شخصی شما؛ اعتبار و مجوز دسترسی بررسی نشده است.',ref:'ثبت شخصی ـ تأییدنشده',url});addSubjectOption('resource-subject',el('new-resource-subject').value.trim());save();event.target.reset();el('resource-search').value='';el('resource-subject').value='all';el('resource-level').value='all';renderResources();refreshDashboard();notify('منبع در کتابخانه محلی شما ثبت شد.');});
+el('resource-grid').addEventListener('click',event=>{const target=event.target.closest('[data-resource-summary]');if(!target)return;const r=resources.find(x=>x.id===target.dataset.resourceSummary);el('summary-search').value='';el('summary-subject').value=r?.subject||'all';renderSummaries();navigate('summaries');});
+function renderSummaries(){const list=summaries.concat(state.mySummaries),search=el('summary-search').value.trim().toLowerCase(),subject=el('summary-subject').value;const filtered=list.filter(item=>(subject==='all'||item.subject===subject)&&`${item.title} ${item.text} ${item.subject}`.toLowerCase().includes(search));el('summary-grid').innerHTML=filtered.length?filtered.map(item=>`<article class="summary-card" id="summary-${escapeHtml(item.id)}"><div class="badge-row"><span class="badge">${escapeHtml(item.subject)}</span><span class="badge outline">${item.personal?'یادداشت شخصی':'نمونه آموزشی'}</span></div><h3>${escapeHtml(item.title)}</h3><p class="summary-content clamp">${escapeHtml(item.text)}</p><div class="card-foot"><small>${escapeHtml(item.source)}</small><button type="button" data-expand-summary="${escapeHtml(item.id)}" class="card-link">مشاهده کامل ↓</button></div></article>`).join(''):'<div class="empty-grid">خلاصه‌ای با این شرایط پیدا نشد.</div>';}
+['summary-search','summary-subject'].forEach(id=>el(id).addEventListener(id==='summary-search'?'input':'change',renderSummaries));
+el('summary-grid').addEventListener('click',event=>{const target=event.target.closest('[data-expand-summary]');if(!target)return;const card=target.closest('.summary-card');card.classList.toggle('expanded');target.textContent=card.classList.contains('expanded')?'بستن ↑':'مشاهده کامل ↓';});
+el('summary-form').addEventListener('submit',event=>{event.preventDefault();const title=el('new-summary-title').value.trim(),subject=el('new-summary-subject').value.trim(),text=el('new-summary-text').value.trim();if(!title||!subject||!text){notify('عنوان، موضوع و متن خلاصه الزامی است.',true);return;}state.mySummaries.push({id:`personal-${Date.now()}`,title,subject,text,source:'تهیه‌شده توسط خود شما',personal:true});addSubjectOption('summary-subject',subject);save();event.target.reset();el('summary-search').value='';el('summary-subject').value='all';renderSummaries();refreshDashboard();notify('خلاصه در یادداشت‌های شخصی ذخیره شد.');});
+function shuffle(array){const items=[...array];for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}return items;}
+function renderQuizHistory(){const node=el('quiz-history');node.innerHTML=state.attempts.length?`<h3>آزمون‌های اخیر</h3>${state.attempts.slice(-4).reverse().map(a=>`<div class="history-entry"><span>${escapeHtml(a.date)} · ${escapeHtml(a.topic)}</span><strong>${fa(a.correct)} / ${fa(a.total)}</strong></div>`).join('')}`:'<p class="muted">هنوز آزمون ثبت‌شده‌ای ندارید.</p>';}
+el('quiz-settings').addEventListener('submit',event=>{event.preventDefault();const topic=el('quiz-topic').value;const pool=questions.filter(q=>topic==='all'||q.topic===topic),count=Math.min(Number(el('quiz-count').value),pool.length);if(quizTimer)clearInterval(quizTimer);quiz={items:shuffle(pool).slice(0,count),answers:{},index:0,mode:el('quiz-mode').value,topic:topic==='all'?'ترکیبی':topic,startedAt:Date.now(),remainingSeconds:count*90};renderQuestion();if(quiz.mode==='exam')quizTimer=setInterval(()=>{if(!quiz){clearInterval(quizTimer);return;}quiz.remainingSeconds=Math.max(0,quiz.remainingSeconds-1);const clock=el('quiz-clock');if(clock)clock.textContent=`زمان باقی‌مانده: ${fa(Math.floor(quiz.remainingSeconds/60))}:${fa(String(quiz.remainingSeconds%60).padStart(2,'0'))}`;if(quiz.remainingSeconds===0){finishQuiz();notify('زمان آزمون شبیه‌سازی‌شده تمام شد؛ پاسخ‌های ثبت‌نشده نادرست محاسبه شدند.');}},1000);if(count<Number(el('quiz-count').value))notify(`در این موضوع ${fa(count)} سؤال نمونه وجود دارد؛ آزمون با همین تعداد ساخته شد.`);});
+function renderQuestion(){if(!quiz)return;const item=quiz.items[quiz.index],answer=quiz.answers[item.id],number=quiz.index+1;el('quiz-stage').className='';el('quiz-stage').innerHTML=`<div class="quiz-head"><span class="pill">سؤال ${fa(number)} از ${fa(quiz.items.length)}</span><span class="muted">${escapeHtml(item.topic)} ${quiz.mode==='exam'?`· <span id="quiz-clock">زمان باقی‌مانده: ${fa(Math.floor(quiz.remainingSeconds/60))}:${fa(String(quiz.remainingSeconds%60).padStart(2,'0'))}</span>`:''}</span></div><div class="quiz-progress">${quiz.items.map((q,i)=>`<span class="${i===quiz.index||quiz.answers[q.id]!==undefined?'answered':''}" title="سؤال ${i+1}"></span>`).join('')}</div><div class="question">${escapeHtml(item.question)}</div><div class="choices">${item.choices.map((choice,i)=>`<label class="answer-choice ${answer===i?'selected':''}"><input type="radio" name="quiz-answer" value="${i}" ${answer===i?'checked':''}><span>${escapeHtml(choice)}</span></label>`).join('')}</div><div class="quiz-controls"><button class="button ghost" type="button" id="quiz-prev" ${quiz.index===0?'disabled':''}>سؤال قبلی</button><button class="button primary" type="button" id="quiz-next">${quiz.index===quiz.items.length-1?'ثبت پاسخ‌ها و دیدن نتیجه':'سؤال بعدی'}</button></div>`;}
+el('quiz-stage').addEventListener('change',event=>{if(!quiz||!event.target.matches('input[name="quiz-answer"]'))return;const id=quiz.items[quiz.index].id;quiz.answers[id]=Number(event.target.value);el('quiz-stage').querySelectorAll('.answer-choice').forEach(node=>node.classList.toggle('selected',node.querySelector('input').checked));});
+el('quiz-stage').addEventListener('click',event=>{if(!quiz)return;if(event.target.closest('#quiz-prev')){quiz.index=Math.max(0,quiz.index-1);renderQuestion();}if(event.target.closest('#quiz-next')){if(quiz.index<quiz.items.length-1){quiz.index++;renderQuestion();}else{const first=quiz.items.findIndex(item=>quiz.answers[item.id]===undefined);if(first>=0){quiz.index=first;renderQuestion();notify('لطفاً پیش از پایان، به همه سؤال‌ها پاسخ دهید.',true);}else finishQuiz();}}});
+function finishQuiz(){if(!quiz)return;if(quizTimer){clearInterval(quizTimer);quizTimer=null;}const completedQuiz=quiz;const correct=quiz.items.reduce((sum,q)=>sum+(quiz.answers[q.id]===q.answer?1:0),0),total=quiz.items.length;state.attempts.push({id:`attempt-${Date.now()}`,date:new Date().toLocaleDateString('fa-IR'),topic:quiz.topic,correct,total,seconds:Math.round((Date.now()-quiz.startedAt)/1000)});save();refreshDashboard();renderQuizHistory();quiz=null;el('quiz-stage').innerHTML=`<div class="result-top"><span class="eyebrow">نتیجه آزمون نمونه</span><strong>${fa(Math.round(correct/total*100))}٪</strong><p>${fa(correct)} پاسخ درست از ${fa(total)} سؤال · مدت پاسخگویی حدود ${fa(Math.round(state.attempts.at(-1).seconds/60))} دقیقه</p></div><h3>بازبینی علمی پاسخ‌ها</h3>${completedQuiz.items.map((item,i)=>`<div class="review-entry"><strong>${fa(i+1)}. ${escapeHtml(item.question)}</strong><p class="${completedQuiz.answers[item.id]===item.answer?'correct':'incorrect'}">پاسخ شما: ${completedQuiz.answers[item.id]===undefined?'بدون پاسخ':escapeHtml(item.choices[completedQuiz.answers[item.id]])} ${completedQuiz.answers[item.id]===item.answer?'✓':'✕'}</p>${completedQuiz.answers[item.id]===item.answer?'':`<p class="correct">پاسخ درست: ${escapeHtml(item.choices[item.answer])}</p>`}<p>${escapeHtml(item.explanation)}</p></div>`).join('')}<button type="button" class="button secondary full" id="quiz-reset">آماده آزمون بعدی</button>`;}
+el('quiz-stage').addEventListener('click',event=>{if(!event.target.closest('#quiz-reset'))return;el('quiz-stage').className='empty-state';el('quiz-stage').innerHTML='<span class="empty-symbol">◉</span><h3>برای شروع آماده‌اید؟</h3><p>آزمون بعدی را از تنظیمات کناری آغاز کنید.</p>';});
+
+function formatWorkshopDate(value){return String(value||'').replace('T',' — ');}
+
+// ورکشاپ: فیلتر، مشاهده سرفصل و ثبت علاقه‌مندی آزمایشی بدون دریافت اطلاعات تماس
+function renderWorkshops(){
+  const search=el('workshop-search').value.trim().toLocaleLowerCase('fa-IR');
+  const category=el('workshop-category').value, mode=el('workshop-mode').value;
+  const filtered=publicWorkshops().filter(w=>(category==='all'||w.category===category)&&(mode==='all'||w.mode===mode)&&`${w.title} ${w.category} ${w.intro} ${w.syllabus.join(' ')}`.toLocaleLowerCase('fa-IR').includes(search));
+  el('workshop-grid').innerHTML=filtered.length?filtered.map(w=>{
+    const interested=state.workshopInterests.includes(w.id);
+    return `<article class="workshop-card"><div class="workshop-card-top"><span class="workshop-icon" aria-hidden="true">${workshopIconSvg}</span><div class="badge-row"><span class="badge">${escapeHtml(w.category)}</span><span class="badge outline">${escapeHtml(w.mode)} · ${w.status==='published'?'منتشرشده در نمونه':'پیشنهادی'}</span></div></div><h3>${escapeHtml(w.title)}</h3><p>${escapeHtml(w.intro)}</p><div class="workshop-meta"><span>👥 ${escapeHtml(w.audience)}</span><span>◷ ${escapeHtml(w.duration)}</span>${w.trainer?`<span>مدرس: ${escapeHtml(w.trainer)}</span>`:''}${w.startsAt?`<span>📅 ${escapeHtml(formatWorkshopDate(w.startsAt))} · ${escapeHtml(w.timezone||'Asia/Tehran')}</span>`:''}${Number.isFinite(Number(w.capacity))&&Number(w.capacity)>0?`<span>ظرفیت اعلامی نمونه: ${fa(w.capacity)}</span>`:''}${w.price!==null&&w.price!==undefined&&w.price!==''?`<span>${Number(w.price)===0?'رایگان (نمونه)':`هزینه اعلامی نمونه: ${fa(w.price)} ${escapeHtml(w.currency||'تومان')}`}</span>`:''}${w.certificate==='planned'?`<span>گواهی: برنامه‌ریزی‌شده (نمونه)</span>`:''}</div><details class="workshop-details"><summary>سرفصل‌های کارگاه</summary><ul>${w.syllabus.map(s=>`<li>${escapeHtml(s)}</li>`).join('')}</ul><p class="muted">${w.status==='published'?'اطلاعات درج‌شده نمایشی است؛ ثبت‌نام، پرداخت و صدور گواهی واقعی فعال نیست.':'این طرح هنوز نوبت برگزاری قطعی ندارد.'}</p></details><button type="button" class="button ${interested?'secondary':'primary'} full workshop-action" data-workshop-interest="${escapeHtml(w.id)}" aria-pressed="${interested?'true':'false'}">${interested?'✓ انتخاب شده · لغو علاقه‌مندی':'ثبت علاقه‌مندی آزمایشی'}</button></article>`;
+  }).join(''):'<div class="empty-grid">کارگاهی با این فیلتر پیدا نشد.</div>';
+  const registered=publicWorkshops().filter(w=>state.workshopInterests.includes(w.id));
+  el('workshop-total-count').textContent=`${fa(publicWorkshops().length)} کارگاه نمونه`;
+  el('workshop-interest-count').textContent=`${fa(registered.length)} علاقه‌مندی ثبت‌شده`;
+  el('workshop-interests').innerHTML=registered.length?registered.map(w=>`<div class="workshop-interest"><span>✓ ${escapeHtml(w.title)}</span><button type="button" class="card-link" data-workshop-cancel="${escapeHtml(w.id)}">حذف</button></div>`).join(''):'<p class="muted">هنوز کارگاهی انتخاب نکرده‌اید. ثبت علاقه‌مندی فقط برای آزمایش رابط کاربری است.</p>';
+}
+function toggleWorkshopInterest(id){
+  if(!publicWorkshops().some(w=>w.id===id))return;
+  const pos=state.workshopInterests.indexOf(id);
+  if(pos<0){state.workshopInterests.push(id);notify('علاقه‌مندی آزمایشی شما در همین مرورگر ثبت شد؛ این ثبت‌نام قطعی نیست.');}
+  else{state.workshopInterests.splice(pos,1);notify('علاقه‌مندی آزمایشی لغو شد.');}
+  save();renderWorkshops();refreshDashboard();
+}
+['workshop-search','workshop-category','workshop-mode'].forEach(id=>el(id).addEventListener(id==='workshop-search'?'input':'change',renderWorkshops));
+el('workshop-grid').addEventListener('click',event=>{const button=event.target.closest('[data-workshop-interest]');if(button)toggleWorkshopInterest(button.dataset.workshopInterest);});
+el('workshop-interests').addEventListener('click',event=>{const button=event.target.closest('[data-workshop-cancel]');if(button)toggleWorkshopInterest(button.dataset.workshopCancel);});
+el('workshop-show-all').addEventListener('click',()=>{el('workshop-search').value='';el('workshop-category').value='all';el('workshop-mode').value='all';renderWorkshops();el('workshop-grid').scrollIntoView({behavior:'smooth',block:'start'});});
+
+// مدیریت محلی کارگاه‌ها — این بخش هرگز جایگزین احراز هویت و کنترل ظرفیت سروری نیست.
+function editWorkshopForm(w){
+  const fields={id:'id',title:'title',category:'category',mode:'mode',audience:'audience',duration:'duration',intro:'intro',trainer:'trainer',start:'startsAt',timezone:'timezone',capacity:'capacity',price:'price',currency:'currency',location:'location',status:'status',certificate:'certificate'};
+  for(const [field,key] of Object.entries(fields)){const n=el(`admin-${field}`);n.value=w?.[key]??(field==='timezone'?'Asia/Tehran':field==='status'?'draft':field==='certificate'?'none':field==='currency'?'تومان':field==='category'?validCategories[0]:field==='mode'?'آنلاین':'');}
+  el('admin-syllabus').value=(w?.syllabus||[]).join('\n');
+  el('admin-form-title').textContent=w?`ویرایش: ${w.title}`:'افزودن کارگاه جدید';
+  el('admin-save').textContent=w?'ذخیره تغییرات':'ذخیره کارگاه';
+}
+function renderAdminWorkshops(){
+  const count=s=>workshops.filter(w=>w.status===s).length;
+  el('admin-count-all').textContent=fa(workshops.length);
+  el('admin-count-published').textContent=fa(count('published'));
+  el('admin-count-draft').textContent=fa(count('draft'));
+  el('admin-count-archived').textContent=fa(count('archived'));
+  const search=el('admin-search').value.trim().toLocaleLowerCase('fa-IR');
+  const status=el('admin-filter-status').value;
+  const filtered=workshops.filter(w=>(status==='all'||(w.status||'draft')===status)&&`${w.title} ${w.trainer||''} ${w.category}`.toLocaleLowerCase('fa-IR').includes(search));
+  el('admin-workshop-list').innerHTML=filtered.length?filtered.map(w=>{
+    const label=statusText[w.status||'draft']||'پیش‌نویس';
+    const meta=[w.category,w.trainer?`مدرس: ${w.trainer}`:'مدرس تعیین نشده',w.startsAt?`تاریخ: ${formatWorkshopDate(w.startsAt)} (${w.timezone||'Asia/Tehran'})`:'تاریخ تعیین نشده',w.capacity?`ظرفیت: ${fa(w.capacity)}`:'ظرفیت تعیین نشده'];
+    return `<article class="admin-item"><div class="admin-item-heading"><strong>${escapeHtml(w.title)}</strong><span class="badge ${w.status==='published'?'':'outline'}">${escapeHtml(label)}</span></div><p>${meta.map(escapeHtml).join(' · ')}</p><div class="admin-item-actions"><button type="button" class="button secondary small" data-admin-action="edit" data-id="${escapeHtml(w.id)}">ویرایش</button><button type="button" class="button ghost small" data-admin-action="duplicate" data-id="${escapeHtml(w.id)}">کپی</button><button type="button" class="button ghost small" data-admin-action="archive" data-id="${escapeHtml(w.id)}">${w.status==='archived'?'بازگشت به پیش‌نویس':'بایگانی'}</button><button type="button" class="button danger small" data-admin-action="delete" data-id="${escapeHtml(w.id)}">حذف</button></div></article>`;
+  }).join(''):'<p class="muted">موردی با این مشخصات پیدا نشد.</p>';
+}
+function validateWorkshop(raw){
+ if(!raw.title||!raw.audience||!raw.duration||!raw.intro||!raw.syllabus.length) return 'عنوان، مخاطب، مدت، معرفی و حداقل یک سرفصل الزامی است.';
+ if(!validCategories.includes(raw.category)||!['آنلاین','حضوری','ترکیبی'].includes(raw.mode))return 'حوزه یا شیوه برگزاری معتبر نیست.';
+ if(raw.capacity!==null&&(!Number.isInteger(raw.capacity)||raw.capacity<1))return 'ظرفیت باید عدد صحیح مثبت باشد.';
+ if(raw.price!==null&&(!Number.isFinite(raw.price)||raw.price<0))return 'هزینه نمی‌تواند منفی باشد.';
+ if(raw.location&&raw.location.includes('://')&&!safeUrl(raw.location))return 'نشانی آنلاین باید با http یا https شروع شود.';
+ if(raw.status==='published'){
+   if(!raw.trainer||!raw.startsAt||!raw.capacity)return 'برای انتشار آزمایشی نام مدرس، تاریخ/ساعت و ظرفیت را وارد کنید.';
+   if(!raw.location)return 'برای انتشار آزمایشی، محل برگزاری یا نشانی کلاس را وارد کنید.';
+   if(['آنلاین','ترکیبی'].includes(raw.mode)&&!safeUrl(raw.location))return 'برای کارگاه آنلاین یا ترکیبی لینک معتبر https یا http وارد کنید.';
+ }
+ return '';
+}
+el('workshop-admin-form').addEventListener('submit',event=>{
+  event.preventDefault();
+  const id=el('admin-id').value;
+  const capacityRaw=el('admin-capacity').value.trim(),priceRaw=el('admin-price').value.trim();
+  const raw={id:id||`wc-${Date.now()}-${Math.random().toString(36).slice(2,8)}`,title:el('admin-title').value.trim(),category:el('admin-category').value,mode:el('admin-mode').value,audience:el('admin-audience').value.trim(),duration:el('admin-duration').value.trim(),intro:el('admin-intro').value.trim(),syllabus:el('admin-syllabus').value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean),trainer:el('admin-trainer').value.trim(),startsAt:el('admin-start').value,timezone:el('admin-timezone').value,capacity:capacityRaw===''?null:Number(capacityRaw),price:priceRaw===''?null:Number(priceRaw),currency:el('admin-currency').value,location:el('admin-location').value.trim(),status:el('admin-status').value,certificate:el('admin-certificate').value};
+  const err=validateWorkshop(raw);
+  if(err){notify(err,true);return;}
+  const pos=workshops.findIndex(w=>w.id===raw.id);
+  if(pos>=0)workshops[pos]=raw;else workshops.unshift(raw);
+  persistCatalog();editWorkshopForm(null);notify(pos>=0?'کارگاه ویرایش و در این مرورگر ذخیره شد.':'کارگاه نمونه جدید در این مرورگر ثبت شد.');
+});
+['admin-search','admin-filter-status'].forEach(id=>el(id).addEventListener(id==='admin-search'?'input':'change',renderAdminWorkshops));
+el('admin-reset').addEventListener('click',()=>{editWorkshopForm(null);el('admin-title').focus();});
+el('admin-workshop-list').addEventListener('click',event=>{
+  const button=event.target.closest('[data-admin-action]');if(!button)return;
+  const id=button.dataset.id,w=workshops.find(i=>i.id===id);if(!w)return;
+  const action=button.dataset.adminAction;
+  if(action==='edit'){editWorkshopForm(w);el('workshop-admin-form').scrollIntoView({behavior:'smooth',block:'start'});el('admin-title').focus();return;}
+  if(action==='duplicate'){const copy={...w,id:`wc-${Date.now()}-${Math.random().toString(36).slice(2,8)}`,title:`کپی ${w.title}`,status:'draft',syllabus:[...w.syllabus]};workshops.unshift(copy);persistCatalog();notify('کپی کارگاه به‌صورت پیش‌نویس ساخته شد.');return;}
+  if(action==='archive'){w.status=w.status==='archived'?'draft':'archived';persistCatalog();notify('وضعیت کارگاه در نسخه نمایشی تغییر کرد.');return;}
+  if(action==='delete'){
+   if(!window.confirm(`کارگاه «${w.title}» از این مرورگر حذف شود؟`))return;
+   workshops=workshops.filter(i=>i.id!==id);state.workshopInterests=state.workshopInterests.filter(i=>i!==id);persistCatalog();notify('کارگاه از داده‌های محلی حذف شد.');
+  }
+});
+el('admin-restore-defaults').addEventListener('click',()=>{
+ if(!window.confirm('شش کارگاه نمایشی به حالت اولیه بازگردند؟ کارگاه‌های شخصی شما حفظ می‌شوند.'))return;
+ const defaultIds=new Set(defaultWorkshops.map(w=>w.id));
+ workshops=workshops.filter(w=>!defaultIds.has(w.id)).concat(draftDefaults.map(w=>({...w,syllabus:[...w.syllabus]})));
+ persistCatalog();editWorkshopForm(null);notify('شش کارگاه پیش‌فرض بازنشانی شدند.');
+});
+el('admin-export').addEventListener('click',()=>{
+ const content=JSON.stringify({app:'HealthPajooh',version:'0.8',demo:true,workshops},null,2);
+ const blob=new Blob([content],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+ link.href=url;link.download='healthpajooh-workshops-demo.json';link.click();window.setTimeout(()=>URL.revokeObjectURL(url),3000);
+ notify('فهرست کارگاه‌های نمایشی به‌صورت JSON ذخیره شد.');
+});
+
+el('export-data').addEventListener('click',()=>{const content=JSON.stringify({app:'سلامت‌پژوه',version:'0.8',exportedAt:new Date().toISOString(),data:state},null,2);const blob=new Blob([content],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='healthpajooh-study-data.json';link.click();window.setTimeout(()=>URL.revokeObjectURL(url),3000);notify('فایل پشتیبان JSON ساخته شد.');});
+
+
+// v0.8 — عضو جدید جامعه هدف با خوداظهاری ۱۰٪ تخفیف؛ تمدید همه اعضا ۳۰٪ تخفیف. تخفیف‌ها جمع نمی‌شوند.
+// همه پرداخت‌ها ساختگی و محلی هستند. قاعده و مبلغ در سرور باید دوباره محاسبه شود.
+const BILL_KEY='healthpajooh_billing_demo_v08';
+const iranYear=()=>Number(new Intl.DateTimeFormat('fa-IR-u-ca-persian-nu-latn',{year:'numeric',timeZone:'Asia/Tehran'}).format(new Date()));
+const demoYear=iranYear();
+const defaultReleases=[{version:1,title:'بسته اولیه منابع',addedItems:80,notes:'منابع آموزشی نمونه'},{version:2,title:'منابع به‌روزشده',addedItems:20,notes:'افزوده‌شده بدون پرداخت اضافه'}];
+let billing={releases:structuredClone(defaultReleases),tariffs:[{year:demoYear,price:1200000,createdAt:null}],member:null,orders:[],feedback:[],nextOrder:null,support:[],works:[],selfDeclaredEligible:false};
+try{
+ const raw=JSON.parse(localStorage.getItem(BILL_KEY)||'null');
+ if(raw&&typeof raw==='object'){
+  if(Array.isArray(raw.releases)&&raw.releases.length&&raw.releases.every((r,i)=>r&&r.version===i+1&&Number.isSafeInteger(r.addedItems)&&r.addedItems>=1))billing.releases=raw.releases;
+  if(Array.isArray(raw.tariffs)&&raw.tariffs.length&&raw.tariffs.every(r=>r&&Number.isSafeInteger(r.year)&&Number.isSafeInteger(r.price)&&r.price>=0))billing.tariffs=raw.tariffs;
+  if(raw.member&&typeof raw.member==='object'&&Number.isFinite(Date.parse(raw.member.expiresAt)))billing.member=raw.member;
+  for(const k of ['orders','feedback','support','works'])if(Array.isArray(raw[k]))billing[k]=raw[k];
+  if(typeof raw.selfDeclaredEligible==='boolean')billing.selfDeclaredEligible=raw.selfDeclaredEligible;
+  if(raw.nextOrder&&typeof raw.nextOrder==='object')billing.nextOrder=raw.nextOrder;
+ }
+}catch(_e){/* داده ناسالم نادیده گرفته می‌شود */}
+// انتقال یک‌باره داده‌های نسخه ۰٫۷؛ صورتحساب باز قدیمی منتقل نمی‌شود، چون فرمول قیمت‌گذاری تغییر کرده است.
+try{
+ if(!localStorage.getItem(BILL_KEY)){
+  const old=JSON.parse(localStorage.getItem('healthpajooh_billing_demo_v07')||'null');
+  if(old&&typeof old==='object'){
+   if(Array.isArray(old.releases)&&old.releases.length)billing.releases=old.releases;
+   if(Array.isArray(old.tariffs)&&old.tariffs.length)billing.tariffs=old.tariffs;
+   if(old.member&&Number.isFinite(Date.parse(old.member.expiresAt)))billing.member=old.member;
+   for(const k of ['orders','feedback','support','works'])if(Array.isArray(old[k]))billing[k]=old[k];
+  }else{
+   const older=JSON.parse(localStorage.getItem('healthpajooh_billing_demo_v06')||'null');
+   if(older&&Array.isArray(older.feedback))billing.feedback=older.feedback;
+  }
+ }
+}catch(_e){}
+const saveBilling=()=>{try{localStorage.setItem(BILL_KEY,JSON.stringify(billing))}catch(_e){notify('ذخیره‌سازی محلی انجام نشد.',true)}};
+const money=n=>Number(n).toLocaleString('fa-IR',{maximumFractionDigits:0});
+const latestRelease=()=>billing.releases[billing.releases.length-1];
+const totalItems=()=>billing.releases.reduce((a,r)=>a+r.addedItems,0);
+const prettyDate=(iso)=>iso?new Intl.DateTimeFormat('fa-IR-u-ca-gregory',{dateStyle:'medium'}).format(new Date(iso)):'—';
+function yearLater(iso){
+ const d=new Date(iso),y=d.getUTCFullYear()+1,m=d.getUTCMonth(),day=d.getUTCDate(),maxDay=new Date(Date.UTC(y,m+1,0)).getUTCDate();
+ const result=new Date(iso);result.setUTCFullYear(y,m,Math.min(day,maxDay));return result.toISOString();
+}
+function currentTariff(){
+ const year=iranYear(),sorted=billing.tariffs.slice().sort((a,b)=>b.year-a.year);
+ return sorted.find(t=>t.year<=year)||sorted.at(-1);
+}
+function membershipQuote(){
+ const tariff=currentTariff(),member=billing.member;
+ if(!member){
+  const percent=billing.selfDeclaredEligible?10:0;
+  const amount=Math.round(tariff.price*(100-percent)/100);
+  return {type:'new',amount,full:tariff.price,discount:tariff.price-amount,percent,discountReason:percent?'self_declaration':'none',year:tariff.year,desc:percent?'عضویت اولیه با ۱۰٪ تخفیف جامعه هدف بر اساس خوداظهاری؛ یک سال اعتبار و تمام به‌روزرسانی‌های منابع رایگان است.':'عضویت اولیه با تعرفه کامل؛ در صورت عضویت در جامعه هدف می‌توانید گزینه خوداظهاری را انتخاب و ۱۰٪ تخفیف دریافت کنید.'};
+ }
+ if(Date.parse(member.expiresAt)<=Date.now()){
+  const amount=Math.round(tariff.price*0.7);
+  return {type:'renewal',amount,full:tariff.price,discount:tariff.price-amount,percent:30,discountReason:'renewal',year:tariff.year,desc:'تمدید پس از پایان اعتبار برای همه اعضا با ۳۰٪ تخفیف از تعرفه مصوب سال تمدید؛ تخفیف خوداظهاری به آن افزوده نمی‌شود.'};
+ }
+ return {type:'active',amount:0,full:tariff.price,discount:0,percent:0,discountReason:'active',year:tariff.year,desc:'عضویت فعلی فعال است؛ تمام منابع جدید تا پایان دوره بدون پرداخت اضافه در دسترس‌اند.'};
+}
+function renderBill(){
+ const v=latestRelease(),q=membershipQuote(),member=billing.member;
+ el('bill-current-version').textContent=`نسخه ${money(v.version)}`;
+ el('bill-resource-count').textContent=`${money(totalItems())} مدخل آموزشی فرضی`;
+ el('bill-full-price').textContent=money(q.full);
+ el('bill-tariff-year').textContent=`سال ${money(q.year)} شمسی · تومان · نرخ نمونه`;
+ el('bill-member-status').textContent=!member?'عضو جدید':Date.parse(member.expiresAt)<=Date.now()?'نیازمند تمدید':'عضو فعال';
+ el('bill-expiry').textContent=member?`پایان دوره: ${prettyDate(member.expiresAt)}`:'هنوز عضویتی ثبت نشده است.';
+ el('bill-self-declare-block').hidden=q.type!=='new';
+ el('bill-self-declared').checked=billing.selfDeclaredEligible;
+ el('bill-self-declared').disabled=Boolean(billing.nextOrder);
+ el('bill-amount').textContent=money(q.amount);el('bill-explanation').textContent=q.desc;
+ el('bill-price-breakdown').innerHTML=`<div><span>تعرفه کامل مصوب</span><strong>${money(q.full)} تومان</strong></div><div><span>${q.type==='renewal'?'تخفیف تمدید (۳۰٪)':q.type==='new'?'تخفیف خوداظهاری جامعه هدف ('+q.percent+'٪)':'تخفیف ویژه'}</span><strong>${money(q.discount)} تومان</strong></div><div><span>هزینه به‌روزرسانی منابع</span><strong>۰ تومان</strong></div><div class="bill-final"><span>مبلغ قابل پرداخت</span><strong>${money(q.amount)} تومان</strong></div>`;
+ el('bill-create-order').disabled=q.amount===0||Boolean(billing.nextOrder);
+ el('bill-create-order').textContent=q.amount===0?'عضویت شما فعال است':'صدور صورت‌حساب آزمایشی';
+ if(billing.nextOrder){
+  const o=billing.nextOrder;el('bill-pending').hidden=false;
+  el('bill-pending').innerHTML=`<div><strong>صورت‌حساب آزمایشی ${escapeHtml(o.id)}</strong><p>مبلغ: ${money(o.amount)} تومان · نوع: ${o.type==='renewal'?'تمدید':'عضویت جدید'} · تخفیف: ${money(o.discountPercent)}٪</p><p class="muted">تأیید زیر فقط حالت نمایشی مرورگر را تغییر می‌دهد.</p></div><div class="bill-pending-actions"><button class="button primary small" type="button" id="bill-demo-confirm">شبیه‌سازی تأیید پرداخت</button><button class="button ghost small" type="button" id="bill-demo-cancel">لغو</button></div>`;
+ }else{el('bill-pending').hidden=true;el('bill-pending').innerHTML='';}
+ el('bill-history').innerHTML=billing.orders.length?billing.orders.slice().reverse().map(o=>`<div class="history-entry"><span>${escapeHtml(o.kindLabel)} · ${prettyDate(o.at)} · تعرفه ${money(o.year)}</span><strong>${money(o.amount)} تومان</strong></div>`).join(''):'<p class="muted">هنوز پرداخت آزمایشی ثبت نشده است.</p>';
+}
+function resetDemoMember(type){
+ if(billing.nextOrder&&!window.confirm('صورت‌حساب باز لغو و سناریو تغییر داده شود؟'))return;
+ if(type==='new'){billing.member=null;billing.selfDeclaredEligible=false;}
+ else{
+  const past=new Date();past.setUTCDate(past.getUTCDate()-(type==='old'?60:400));
+  const activatedAt=past.toISOString();billing.member={activatedAt,expiresAt:yearLater(activatedAt)};
+ }
+ billing.nextOrder=null;saveBilling();renderBill();notify('سناریوی نمایشی تغییر کرد.');
+}
+el('bill-self-declared').addEventListener('change',e=>{
+ if(billing.nextOrder){e.target.checked=billing.selfDeclaredEligible;notify('ابتدا صورت‌حساب باز را لغو کنید و سپس خوداظهاری را تغییر دهید.',true);return;}
+ billing.selfDeclaredEligible=e.target.checked;
+ saveBilling();renderBill();
+ notify(billing.selfDeclaredEligible?'تخفیف ۱۰٪ خوداظهاری برای عضویت اولیه لحاظ شد.':'تخفیف خوداظهاری حذف شد.');
+});
+el('bill-seed-new').addEventListener('click',()=>resetDemoMember('new'));
+el('bill-seed-old').addEventListener('click',()=>resetDemoMember('old'));
+el('bill-seed-expired').addEventListener('click',()=>resetDemoMember('expired'));
+el('bill-create-order').addEventListener('click',()=>{
+ const q=membershipQuote();if(q.amount===0||billing.nextOrder)return;
+ billing.nextOrder={id:`DEMO-${Date.now()}`,year:q.year,amount:q.amount,type:q.type,discountPercent:q.percent,discountReason:q.discountReason,selfDeclaredEligible:q.type==='new'&&billing.selfDeclaredEligible,createdAt:new Date().toISOString()};
+ saveBilling();renderBill();notify('صورت‌حساب آزمایشی ایجاد شد؛ وجهی دریافت نشده است.');
+});
+el('bill-pending').addEventListener('click',e=>{
+ if(e.target.closest('#bill-demo-cancel')){billing.nextOrder=null;saveBilling();renderBill();notify('صورت‌حساب لغو شد.');return;}
+ if(!e.target.closest('#bill-demo-confirm')||!billing.nextOrder)return;
+ const order=billing.nextOrder,q=membershipQuote(),now=new Date().toISOString();
+ if(q.amount!==order.amount||q.year!==order.year||q.type!==order.type||q.percent!==order.discountPercent||q.discountReason!==order.discountReason){billing.nextOrder=null;saveBilling();renderBill();notify('صورت‌حساب قدیمی شده است؛ مجدداً محاسبه کنید.',true);return;}
+ if(!['new','renewal'].includes(order.type))return;
+ billing.member={activatedAt:now,expiresAt:yearLater(now)};
+ billing.orders.push({id:order.id,amount:order.amount,year:order.year,at:now,type:order.type,discountPercent:order.discountPercent,discountReason:order.discountReason,selfDeclaredEligible:order.selfDeclaredEligible,kindLabel:order.type==='new'?(order.discountPercent===10?'عضویت اولیه؛ خوداظهاری ۱۰٪':'عضویت اولیه بدون تخفیف'):'تمدید با ۳۰٪ تخفیف',simulated:true});
+ billing.nextOrder=null;saveBilling();renderBill();notify('پرداخت آزمایشی تأیید شد. تراکنش واقعی انجام نشده است.');
+});
+function renderReleases(){
+ el('finance-release-list').innerHTML=`<table class="release-table"><thead><tr><th>نسخه</th><th>شرح محتوا</th><th>مدخل جدید</th><th>هزینه اعضا</th></tr></thead><tbody>${billing.releases.map(r=>`<tr><td>${money(r.version)}</td><td>${escapeHtml(r.title)}</td><td>${money(r.addedItems)}</td><td>رایگان</td></tr>`).join('')}</tbody></table>`;
+ el('finance-tariff-list').innerHTML=`<table class="release-table"><thead><tr><th>سال تعرفه</th><th>عضو جدید عادی</th><th>جامعه هدف (۹۰٪)</th><th>تمدید (۷۰٪)</th></tr></thead><tbody>${billing.tariffs.slice().sort((a,b)=>a.year-b.year).map(t=>`<tr><td>${money(t.year)}</td><td>${money(t.price)}</td><td>${money(Math.round(t.price*.9))}</td><td>${money(Math.round(t.price*.7))}</td></tr>`).join('')}</tbody></table>`;
+}
+el('tariff-year').value=String(demoYear+1);
+el('tariff-form').addEventListener('submit',e=>{
+ e.preventDefault();const year=Number(el('tariff-year').value),price=Number(el('tariff-price').value),maximum=Math.max(...billing.tariffs.map(t=>t.year));
+ if(!Number.isSafeInteger(year)||year<=maximum||year>1500||!Number.isSafeInteger(price)||price<0||price>1e11){notify('سال تعرفه باید از سال‌های ثبت‌شده جدیدتر و مبلغ معتبر باشد.',true);return;}
+ if(billing.nextOrder){notify('ابتدا صورت‌حساب باز را تعیین تکلیف کنید.',true);return;}
+ billing.tariffs.push({year,price,createdAt:new Date().toISOString()});saveBilling();renderReleases();renderBill();el('tariff-year').value=String(year+1);el('tariff-price').value='';notify('تعرفه سال جدید ثبت شد.');
+});
+el('release-form').addEventListener('submit',e=>{
+ e.preventDefault();const title=el('release-title').value.trim(),addedItems=Number(el('release-items').value);
+ if(!title||!Number.isSafeInteger(addedItems)||addedItems<1||addedItems>1000000){notify('عنوان و تعداد منابع معتبر لازم است.',true);return;}
+ billing.releases.push({version:latestRelease().version+1,title,addedItems,notes:el('release-notes').value.trim(),createdAt:new Date().toISOString()});
+ saveBilling();renderReleases();renderBill();e.target.reset();notify('نسخه منابع اضافه شد؛ هزینه عضویت تغییر نکرد.');
+});
+function renderFeedback(){
+ el('feedback-count').textContent=`${money(billing.feedback.length)} مورد`;
+ el('finance-feedback-total').textContent=`${money(billing.feedback.length)} مورد`;
+ const card=(f,admin)=>`<article class="feedback-item"><div class="feedback-header"><strong>${escapeHtml(f.category)}</strong><span class="badge ${f.status==='resolved'?'':'outline'}">${escapeHtml(f.status==='resolved'?'بررسی‌شده':f.status==='review'?'در دست بررسی':'ثبت‌شده')}</span></div><p>${escapeHtml(f.message)}</p><div class="muted">${prettyDate(f.createdAt)}${f.rating?` · امتیاز ${money(f.rating)} از ۵`:''}</div>${admin?`<div class="feedback-buttons"><button class="button secondary small" type="button" data-feedback-status="review" data-feedback-id="${escapeHtml(f.id)}">در دست بررسی</button><button class="button ghost small" type="button" data-feedback-status="resolved" data-feedback-id="${escapeHtml(f.id)}">بررسی‌شده</button></div>`:''}</article>`;
+ el('feedback-list').innerHTML=billing.feedback.length?billing.feedback.slice().reverse().map(f=>card(f,false)).join(''):'<p class="muted">هنوز نظری ثبت نکرده‌اید.</p>';
+ el('finance-feedback-list').innerHTML=billing.feedback.length?billing.feedback.slice().reverse().map(f=>card(f,true)).join(''):'<p class="muted">در این مرورگر بازخوردی ثبت نشده است.</p>';
+}
+el('feedback-form').addEventListener('submit',event=>{
+ event.preventDefault();const msg=el('feedback-message').value.trim();if(msg.length<10||msg.length>1500||!el('feedback-consent').checked){notify('لطفاً نظر حداقل ۱۰ کاراکتری و رضایت ذخیره محلی را ثبت کنید.',true);return;}
+ billing.feedback.push({id:`f-${Date.now()}-${Math.random().toString(36).slice(2,7)}`,category:el('feedback-category').value,message:msg,rating:el('feedback-rating').value?Number(el('feedback-rating').value):null,createdAt:new Date().toISOString(),status:'new'});
+ saveBilling();event.target.reset();renderFeedback();notify('بازخورد آزمایشی فقط در این مرورگر ثبت شد.');
+});
+el('finance-feedback-list').addEventListener('click',event=>{
+ const b=event.target.closest('[data-feedback-status]');if(!b)return;
+ const f=billing.feedback.find(f=>f.id===b.dataset.feedbackId);
+ if(!f)return;f.status=b.dataset.feedbackStatus;saveBilling();renderFeedback();notify('وضعیت بازخورد نمونه تغییر کرد.');
+});
+renderBill();renderReleases();renderFeedback();
+
+// v0.7 — تیکت‌های پشتیبانی آزمایشی و اشتراک آثار علمی با بازبینی اولیه.
+const statusName={new:'ثبت‌شده',review:'در دست بررسی',answered:'پاسخ داده‌شده',closed:'بسته‌شده'};
+function renderSupport(){
+ el('support-count').textContent=`${money(billing.support.length)} مورد`;
+ const item=(t,admin)=>`<article class="feedback-item"><div class="feedback-header"><strong>${escapeHtml(t.subject)}</strong><span class="badge outline">${escapeHtml(statusName[t.status]||'ثبت‌شده')}</span></div><p class="muted">شماره پیگیری: ${escapeHtml(t.id)} · ${escapeHtml(t.category)} · ${t.priority==='high'?'اولویت بالا':'اولویت معمولی'} · ${prettyDate(t.createdAt)}</p><p>${escapeHtml(t.message)}</p>${t.reply?`<div class="demo-reply"><b>پاسخ آزمایشی پشتیبان:</b><p>${escapeHtml(t.reply)}</p></div>`:''}${admin?`<div class="feedback-buttons"><button class="button secondary small" data-support-status="review" data-support-id="${escapeHtml(t.id)}">در دست بررسی</button><button class="button ghost small" data-support-status="closed" data-support-id="${escapeHtml(t.id)}">بستن تیکت</button></div><label>متن پاسخ آزمایشی<textarea class="support-reply" data-reply-id="${escapeHtml(t.id)}" rows="2" maxlength="1200">${escapeHtml(t.reply||'')}</textarea></label><button class="button primary small" data-support-answer="${escapeHtml(t.id)}">ثبت پاسخ</button>`:''}</article>`;
+ el('support-list').innerHTML=billing.support.length?billing.support.slice().reverse().map(t=>item(t,false)).join(''):'<p class="muted">درخواست پشتیبانی ثبت نشده است.</p>';
+ el('support-admin-list').innerHTML=billing.support.length?billing.support.slice().reverse().map(t=>item(t,true)).join(''):'<div class="panel"><p class="muted">هنوز تیکتی وجود ندارد.</p></div>';
+}
+el('support-form').addEventListener('submit',e=>{
+ e.preventDefault();const subject=el('support-subject').value.trim(),message=el('support-message').value.trim();
+ if(subject.length<5||message.length<12){notify('عنوان و شرح مشکل را کامل‌تر وارد کنید.',true);return;}
+ billing.support.push({id:`HP-S-${Date.now()}`,subject,message,category:el('support-category').value,priority:el('support-priority').value,status:'new',reply:'',createdAt:new Date().toISOString()});
+ saveBilling();renderSupport();e.target.reset();notify('درخواست پشتیبانی محلی ثبت شد؛ کارشناسی به‌صورت واقعی آن را دریافت نمی‌کند.');
+});
+el('support-admin-list').addEventListener('click',e=>{
+ const b=e.target.closest('[data-support-status],[data-support-answer]');if(!b)return;
+ const id=b.dataset.supportId||b.dataset.supportAnswer,t=billing.support.find(t=>t.id===id);if(!t)return;
+ if(b.dataset.supportStatus)t.status=b.dataset.supportStatus;
+ else{
+  const input=Array.from(el('support-admin-list').querySelectorAll('[data-reply-id]')).find(n=>n.dataset.replyId===id);
+  if(!input||input.value.trim().length<3){notify('متن پاسخ را وارد کنید.',true);return;}
+  t.reply=input.value.trim();t.status='answered';
+ }
+ saveBilling();renderSupport();notify('وضعیت تیکت در نمونه تغییر کرد.');
+});
+const workStatus={pending:'در انتظار بررسی',published:'منتشرشده در نمونه',rejected:'ردشده'};
+function renderWorks(){
+ const search=el('works-search').value.trim().toLocaleLowerCase('fa-IR'),published=billing.works.filter(w=>w.status==='published'&&`${w.title} ${w.authors} ${w.topic}`.toLocaleLowerCase('fa-IR').includes(search));
+ const card=(w,admin,allowRemove=false)=>`<article class="feedback-item"><div class="feedback-header"><strong>${escapeHtml(w.title)}</strong><span class="badge outline">${escapeHtml(workStatus[w.status]||'در انتظار بررسی')}</span></div><p class="muted">${escapeHtml(w.type)} · ${escapeHtml(w.topic)} · ${escapeHtml(w.authors)}</p><p>${escapeHtml(w.abstract)}</p>${w.url?`<a href="${escapeHtml(w.url)}" target="_blank" rel="noopener noreferrer">مشاهده منبع معرفی‌شده ↗</a>`:''}<p class="muted">نحوه اشتراک: ${escapeHtml(w.license==='link_only'?'فقط معرفی و لینک':w.license==='cc_by'?'CC BY':'اجازه صاحب حقوق')} · ${prettyDate(w.createdAt)}</p>${w.reviewNote?`<p class="muted">یادداشت بررسی: ${escapeHtml(w.reviewNote)}</p>`:''}${admin?`<div class="feedback-buttons"><button class="button primary small" data-work-action="published" data-work-id="${escapeHtml(w.id)}">تأیید انتشار آزمایشی</button><button class="button ghost small" data-work-action="rejected" data-work-id="${escapeHtml(w.id)}">رد اثر</button><button class="button secondary small" data-work-action="pending" data-work-id="${escapeHtml(w.id)}">بازگشت به بررسی</button></div>`:(allowRemove?`<div class="feedback-buttons"><button class="button ghost small" data-work-remove="${escapeHtml(w.id)}">حذف اثر من از نمونه</button></div>`:``)}</article>`;
+ el('works-count').textContent=`${money(published.length)} اثر`;
+ el('works-public-list').innerHTML=published.length?published.map(w=>card(w,false,false)).join(''):'<p class="muted">هنوز اثری در گالری محلی منتشر نشده است.</p>';
+ el('works-own-list').innerHTML=billing.works.length?billing.works.slice().reverse().map(w=>card(w,false,true)).join(''):'<p class="muted">شما هنوز اثری ارسال نکرده‌اید.</p>';
+ el('works-admin-list').innerHTML=billing.works.length?billing.works.slice().reverse().map(w=>card(w,true)).join(''):'<div class="panel"><p class="muted">اثری برای بررسی ثبت نشده است.</p></div>';
+}
+el('works-search').addEventListener('input',renderWorks);
+el('work-form').addEventListener('submit',e=>{
+ e.preventDefault();const title=el('work-title').value.trim(),authors=el('work-authors').value.trim(),abstract=el('work-abstract').value.trim(),urlRaw=el('work-url').value.trim(),url=urlRaw?safeUrl(urlRaw):'';
+ if(title.length<5||!authors||abstract.length<30||!el('work-rights').checked){notify('اطلاعات اثر و تأیید حق انتشار را کامل کنید.',true);return;}
+ if(urlRaw&&!url){notify('نشانی اثر باید با http یا https معتبر شروع شود.',true);return;}
+ billing.works.push({id:`HP-W-${Date.now()}`,title,authors,abstract,url,type:el('work-type').value,topic:el('work-topic').value,license:el('work-license').value,status:'pending',reviewNote:'',createdAt:new Date().toISOString()});
+ saveBilling();renderWorks();e.target.reset();notify('اثر علمی برای بررسی آزمایشی ثبت شد؛ روی اینترنت منتشر نشده است.');
+});
+el('works-own-list').addEventListener('click',e=>{
+ const b=e.target.closest('[data-work-remove]');if(!b)return;
+ if(!window.confirm('این اثر از نمونه محلی حذف شود؟'))return;
+ billing.works=billing.works.filter(w=>w.id!==b.dataset.workRemove);saveBilling();renderWorks();notify('اثر از نمونه حذف شد.');
+});
+el('works-public-list').addEventListener('click',e=>{const b=e.target.closest('[data-work-remove]');if(b)notify('برای حذف اثر، از فهرست آثار ارسالی من اقدام کنید.');});
+el('works-admin-list').addEventListener('click',e=>{
+ const b=e.target.closest('[data-work-action]');if(!b)return;
+ const w=billing.works.find(w=>w.id===b.dataset.workId);if(!w)return;
+ w.status=b.dataset.workAction;w.reviewNote=w.status==='rejected'?'برای انتشار، حقوق اثر و اطلاعات ارسالی بازبینی شود.':'';
+ saveBilling();renderWorks();notify('وضعیت بررسی اثر در نمونه ثبت شد.');
+});
+renderSupport();renderWorks();
+
+
+populateSubjects();populateForm();planHtml();renderResources();renderSummaries();renderQuizHistory();renderWorkshops();editWorkshopForm(null);renderAdminWorkshops();refreshDashboard();
+})();
+
+</script>
+
+<script>
+// PWA bootstrap: service workers and install prompts require a secure origin (HTTPS or localhost).
+(function(){
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+    window.addEventListener('load', function(){ navigator.serviceWorker.register('./service-worker.js').catch(function(err){ console.warn('Service worker registration failed', err); }); });
+  }
+  var installButton = document.getElementById('install-app');
+  var deferredPrompt = null;
+  window.addEventListener('beforeinstallprompt', function(event){
+    event.preventDefault();
+    deferredPrompt = event;
+    if (installButton) installButton.textContent = 'نصب اپ';
+  });
+  if (installButton) {
+    installButton.addEventListener('click', async function(){
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        try { await deferredPrompt.userChoice; } catch (_) {}
+        deferredPrompt = null;
+      } else {
+        alert('برای نصب سلامت‌پژوه، این صفحه باید از یک نشانی امن HTTPS باز شود. در اندروید از منوی مرورگر گزینه «Install app» یا «Add to Home screen» و در آیفون از منوی Share گزینه «Add to Home Screen» را انتخاب کنید.');
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

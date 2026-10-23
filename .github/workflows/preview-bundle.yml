@@ -1,0 +1,36 @@
+name: Build partner preview package
+on:
+  push:
+    branches:
+      - feature/interactive-research-modules
+    paths:
+      - "index.html"
+      - "research-tools.html"
+      - "security/PARTNER-REVIEW-GUIDE.md"
+      - ".github/workflows/preview-bundle.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble site for separate static hosting
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          cp index.html research-tools.html dist/
+          cp security/PARTNER-REVIEW-GUIDE.md dist/REVIEW-GUIDE.md
+          test -s dist/index.html
+          test -s dist/research-tools.html
+          grep -q 'research-tools.html' dist/index.html
+          printf '%s\n' 'Preview only. Open index.html. Payments and admin access are demo-only.' > dist/README.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: salamatpajouh-partner-preview
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30

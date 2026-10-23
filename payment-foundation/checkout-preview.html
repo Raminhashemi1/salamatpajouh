@@ -66,7 +66,7 @@ function render(){
   return;
  }
  const vals=[fee.value,expense.value,refund.value];
- if(!vals.every(v=>/^\\d+$/.test(v.trim())&&Number.isSafeInteger(Number(v)))){
+ if(!vals.every(v=>/^\d+$/.test(v.trim())&&Number.isSafeInteger(Number(v)))){
   result.className="output error";result.textContent="هزینه‌ها باید مبلغ ریالی صحیح، غیرمنفی و معتبر باشند.";return;
  }
  const costs=vals.reduce((sum,val)=>sum+BigInt(val),0n);
